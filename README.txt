@@ -1,3 +1,5 @@
+My .vim directory; configuration for the Vim text editor. 
+
 Installation:
 	
 	Mac: git clone git://github.com/roryokane/dotvim.git ~/.vim
