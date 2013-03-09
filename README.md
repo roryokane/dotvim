@@ -43,4 +43,6 @@ In Vim:
 
 	:BundleInstall
 
-Ignore any errors from Syntastic after Vundle finished installing all of the plugins; just keep pressing ENTER until the errors are gone. Then quit Vim with `:q`. When you launch `vim` again, it should now be all set up, and you should get no errors.
+Ignore any errors from Syntastic after Vundle finished installing all of the plugins; just keep pressing ENTER until the errors are gone. Then quit Vim with `:q`.
+
+When you launch `vim` again, Vim should now be all set up, and you should get no errors.
