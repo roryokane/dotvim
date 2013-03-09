@@ -26,7 +26,7 @@ Windows: `git clone git://github.com/roryokane/dotvim.git %USERPROFILE%/.vim`
 
 (For some reason, the Vundle-managed plugins don’t all have entries in Git’s `.gitmodules` file, meaning I can’t just tell Git to download all submodules. Here’s what worked for me instead.)
 
-#### Install [Vundle](https://github.com/gmarik/vundle) plugin manager
+#### Install the [Vundle](https://github.com/gmarik/vundle) plugin manager
 
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
@@ -38,4 +38,4 @@ In Vim:
 
 	:BundleInstall
 
-Ignore any errors from Syntastic after installing; just keep pressing ENTER until the errors are gone. Then quit Vim with `:q`. When you launch `vim` again, it should now be all set up, and you should get no errors.
+Ignore any errors from Syntastic after Vundle finished installing all of the plugins; just keep pressing ENTER until the errors are gone. Then quit Vim with `:q`. When you launch `vim` again, it should now be all set up, and you should get no errors.
