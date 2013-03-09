@@ -233,7 +233,8 @@ let g:mapleader=","
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
-map Y y$
+" this is currently being overwritten by yrrecord in YankRing; TODO fix
+noremap Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
@@ -262,11 +263,39 @@ noremap $ '
 noremap ` $
 noremap ' `
 noremap ^ 0
+noremap g0 g^
+noremap g$ g'
+noremap g` g$
+noremap g' g`
+noremap g^ g0
+" stop selecting the newline in Visual mode
+vnoremap ` $h
+
+" keep indentation if I press Esc right after o or O
+nnoremap o ox<BS>
+nnoremap O Ox<BS>
+" also keep indentation if I press Esc right after a newline in Insert mode
+inoremap <Esc> x<BS><Esc>
 
 " run recorded macros easily
 " use qq to record
 " if you want Ex mode, run :normal! Q
 nnoremap Q @q
+
+" substitute
+nnoremap <Leader>s :%s//g<left><left>
+" in visual mode, the range '<,'> is typed automatically
+vnoremap <Leader>s :s//g<left><left>
+
+" Remap <f1> to <esc> in every mode to accommodate fat-fingering
+nmap <f1> <esc>
+vmap <f1> <esc>
+xmap <f1> <esc>
+smap <f1> <esc>
+omap <f1> <esc>
+imap <f1> <esc>
+lmap <f1> <esc>
+cmap <f1> <esc>
 
 
 "------------------------------------------------------------
