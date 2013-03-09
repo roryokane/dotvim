@@ -198,9 +198,7 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
-color wombat
-" set guifont=Consolas:h11:cANSI
-set guifont=Consolas:h14
+color wombat256
 
 " wrap, but only in the display, not in the file
 set wrap
