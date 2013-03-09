@@ -212,6 +212,17 @@ set wrapmargin=0
 set showbreak=->
 " set breakindent " not in main vim; need to compile with a patch
 
+" enable matchit to have % jump between keywords such as Ruby's do and end
+runtime macros/matchit.vim
+
+" automatically create folds based on syntax
+set foldmethod=syntax
+set foldlevelstart=99
+
+" scroll to show always show some lines around the cursor
+set scrolloff=3
+
+
 "------------------------------------------------------------
 " Indentation options
 "
