@@ -33,7 +33,13 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 
 #### Install the [Vundle](https://github.com/gmarik/vundle) plugin manager
 
+##### On Mac/Linux:
+
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+##### On Windows:
+
+	git clone https://github.com/gmarik/vundle.git %USERPROFILE%/.vim/bundle/vundle
 
 #### Use Vundle to install plugins
 
