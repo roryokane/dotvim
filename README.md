@@ -6,17 +6,22 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 
 ### Download my config
 
-Mac/Linux: `git clone git://github.com/roryokane/dotvim.git ~/.vim`
-Windows: `git clone git://github.com/roryokane/dotvim.git %USERPROFILE%/.vim`
+#### On Mac/Linux:
+
+	git clone git://github.com/roryokane/dotvim.git ~/.vim
+
+#### On Windows:
+
+	git clone git://github.com/roryokane/dotvim.git %USERPROFILE%/.vim
 
 ### Create symlinks
 
-#### Mac/Linux:
+#### On Mac/Linux:
 
 	ln -s ~/.vim/vimrc ~/.vimrc
 	ln -s ~/.vim/gvimrc ~/.gvimrc
 
-#### Windows:
+#### On Windows:
 
 	cd %USERPROFILE%
 	mklink /H _vimrc .vim/vimrc
