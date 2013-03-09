@@ -45,7 +45,7 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 
 	vim
 
-In Vim:
+Then, in Vim:
 
 	:BundleInstall
 
