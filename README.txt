@@ -2,12 +2,12 @@ My .vim directory; configuration for the Vim text editor.
 
 Installation:
 	
-	Mac: git clone git://github.com/roryokane/dotvim.git ~/.vim
+	Mac/Linux: git clone git://github.com/roryokane/dotvim.git ~/.vim
 	Windows: git clone git://github.com/roryokane/dotvim.git %USERPROFILE%/.vim
 
 Create symlinks:
 	
-	Mac:
+	Mac/Linux:
 	ln -s ~/.vim/vimrc ~/.vimrc
 	ln -s ~/.vim/gvimrc ~/.gvimrc
 	
@@ -18,7 +18,7 @@ Create symlinks:
 
 Switch to the `~/.vim` directory, and fetch submodules:
 	
-	Mac: cd ~/.vim
+	Mac/Linux: cd ~/.vim
 	Windows: cd %USERPROFILE%/.vim
 	
 	git submodule init
