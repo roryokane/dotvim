@@ -39,7 +39,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wincent/Command-T'
 Bundle 'ScrollColors'
-Bundle 'skammer/vim-css-color'
+Bundle 'ap/vim-css-color'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-haml'
@@ -72,11 +72,17 @@ Bundle 'tpope/vim-endwise'
 Bundle 'bufkill.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'tpope/vim-abolish'
-Bundle 'YankRing.vim'
+" disabling YankRing until I fix it overriding my Y mapping
+"Bundle 'YankRing.vim'
 " delimitMate is an untried alternative to the below AutoClose--Alves
 Bundle 'AutoClose--Alves'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'repeat.vim'
+Bundle 'paredit.vim'
+" I can't get swapit to work; try some more
+Bundle 'mjbrownie/swapit'
+Bundle 'tpope/vim-speeddating'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
