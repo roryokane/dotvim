@@ -189,7 +189,7 @@ set t_vb=
 set mouse=a
 
 " Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
+" 'press <Enter> to continue'
 " set cmdheight=2
 
 " Quickly time out on keycodes, but never time out on mappings
