@@ -12,7 +12,7 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 
 #### On Windows:
 
-	git clone git://github.com/roryokane/dotvim.git %USERPROFILE%/.vim
+	git clone git://github.com/roryokane/dotvim.git %USERPROFILE%\.vim
 
 ### Create symlinks
 
@@ -24,8 +24,8 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 #### On Windows:
 
 	cd %USERPROFILE%
-	mklink /H _vimrc .vim/vimrc
-	mklink /H _gvimrc .vim/gvimrc
+	mklink /H _vimrc .vim\vimrc
+	mklink /H _gvimrc .vim\gvimrc
 
 ### Download remote plugins
 
@@ -39,7 +39,7 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 
 ##### On Windows:
 
-	git clone https://github.com/gmarik/vundle.git %USERPROFILE%/.vim/bundle/vundle
+	git clone https://github.com/gmarik/vundle.git %USERPROFILE%\.vim\bundle\vundle
 
 #### Use Vundle to install plugins
 
