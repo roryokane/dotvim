@@ -321,5 +321,20 @@ imap <f1> <esc>
 lmap <f1> <esc>
 cmap <f1> <esc>
 
+" TODO fix that autoquoting in Insert mode breaks . repetition
+" TODO fix repeat.vim not allowing me to repeat NERDCommenter commands
+"  (e.g. ,c<Space>) as I think it’s supposed to
+
+" TODO way to reindent tabs <-> spaces, change number of spaces
+" TODO language-specific indentation styles/sizes
+
+" TODO way to toggle between blank lines being empty or indented
+" TODO make { and } work with indented blank lines (see OO files in Notes)
+
+" TODO when Vim opens a directory, keep NERDTree open after choosing a file
+"  from its listing
+
+" TODO fix that pasting lines adds an extra blank line to the end
+
 
 "------------------------------------------------------------
