@@ -296,6 +296,21 @@ nnoremap <Leader>s :%s//g<left><left>
 " in visual mode, the range '<,'> is typed automatically
 vnoremap <Leader>s :s//g<left><left>
 
+" easy variable rename (imperfect but useful)
+" inspiration from http://stackoverflow.com/a/597932/578288
+" uses indentation for block, not {}, which only works in C-like languages, or
+"  b (`vib`), which doesn’t work at all with Ruby do…end blocks
+" note: `vii` depends on plugin michaeljsmith/vim-indent-object, so not using nnoremap
+" use 'r to get back to variable position afterwards (given my ' mapping)
+" TODO stop it highlighting search results outside of the selected area
+" TODO automatically return to mark r after :s completes
+" TODO provide smarter scoping, or a variation or option for whole-file scope
+" I don’t use `gd` in this because it’s inaccurate;
+"  it finds similarly-named different symbols
+" I could add another `ii` to select the next-outer indent
+" I could define a set of macros, run them with @a, do something manual, @b for rest
+nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+
 " Remap <f1> to <esc> in every mode to accommodate fat-fingering
 nmap <f1> <esc>
 vmap <f1> <esc>
