@@ -222,6 +222,17 @@ set foldlevelstart=99
 " scroll to show always show some lines around the cursor
 set scrolloff=3
 
+" reload files changed on disk when Vim regains focus,
+"  unless there are local changes
+" if this isn't working for you, perhaps only outside of the GUI,
+"  see these pages:
+" http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
+" https://groups.google.com/forum/?fromgroups=#!topic/vim_dev/uqQuSfvuTrc
+set autoread
+
+" TODO automatically reload changed files if the buffer was unedited
+" currently, the GUI pops up a dialog every time
+
 
 "------------------------------------------------------------
 " Indentation options
