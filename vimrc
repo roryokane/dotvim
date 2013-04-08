@@ -308,5 +308,11 @@ imap <f1> <esc>
 lmap <f1> <esc>
 cmap <f1> <esc>
 
+" CDC = Change to Directory of Current file
+" via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
+" TODO once saw this command fail when current directory was on a different
+"  drive (Z instead of C). This command's fault? Can I fix it?
+command CDC cd %:p:h
+
 
 "------------------------------------------------------------
