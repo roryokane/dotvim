@@ -78,11 +78,13 @@ Bundle 'tpope/vim-abolish'
 Bundle 'AutoClose--Alves'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'repeat.vim'
+Bundle 'tpope/vim-repeat'
 Bundle 'paredit.vim'
 " I can't get swapit to work; try some more
 Bundle 'mjbrownie/swapit'
 Bundle 'tpope/vim-speeddating'
+Bundle 'sukima/xmledit'
+Bundle 'vbnet.vim'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
@@ -220,6 +222,20 @@ set foldlevelstart=99
 " scroll to show always show some lines around the cursor
 set scrolloff=3
 
+" reload files changed on disk when Vim regains focus,
+"  unless there are local changes
+" if this isn't working for you, perhaps only outside of the GUI,
+"  see these pages:
+" http://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
+" https://groups.google.com/forum/?fromgroups=#!topic/vim_dev/uqQuSfvuTrc
+set autoread
+
+" TODO automatically reload changed files if the buffer was unedited
+" currently, the GUI pops up a dialog every time
+
+" TODO stop ' in plain text mode from writing ''; I use it for apostrophe
+" sometimes
+
 
 "------------------------------------------------------------
 " Indentation options
@@ -286,6 +302,10 @@ nnoremap O Ox<BS>
 " also keep indentation if I press Esc right after a newline in Insert mode
 inoremap <Esc> x<BS><Esc>
 
+" when indenting with < and >, make it easy to repeat
+vnoremap < <gv
+vnoremap > >gv
+
 " run recorded macros easily
 " use qq to record
 " if you want Ex mode, run :normal! Q
@@ -320,6 +340,12 @@ omap <f1> <esc>
 imap <f1> <esc>
 lmap <f1> <esc>
 cmap <f1> <esc>
+
+" CDC = Change to Directory of Current file
+" via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
+" TODO once saw this command fail when current directory was on a different
+"  drive (Z instead of C). This command's fault? Can I fix it?
+command CDC cd %:p:h
 
 " TODO fix that autoquoting in Insert mode breaks . repetition
 " TODO fix repeat.vim not allowing me to repeat NERDCommenter commands
