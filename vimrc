@@ -288,6 +288,10 @@ nnoremap O Ox<BS>
 " also keep indentation if I press Esc right after a newline in Insert mode
 inoremap <Esc> x<BS><Esc>
 
+" when indenting with < and >, make it easy to repeat
+vnoremap < <gv
+vnoremap > >gv
+
 " run recorded macros easily
 " use qq to record
 " if you want Ex mode, run :normal! Q
