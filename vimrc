@@ -83,6 +83,7 @@ Bundle 'paredit.vim'
 " I can't get swapit to work; try some more
 Bundle 'mjbrownie/swapit'
 Bundle 'tpope/vim-speeddating'
+Bundle 'sukima/xmledit'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
