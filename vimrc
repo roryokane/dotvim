@@ -233,6 +233,9 @@ set autoread
 " TODO automatically reload changed files if the buffer was unedited
 " currently, the GUI pops up a dialog every time
 
+" TODO stop ' in plain text mode from writing ''; I use it for apostrophe
+" sometimes
+
 
 "------------------------------------------------------------
 " Indentation options
