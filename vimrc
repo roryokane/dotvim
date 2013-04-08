@@ -78,7 +78,7 @@ Bundle 'tpope/vim-abolish'
 Bundle 'AutoClose--Alves'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'repeat.vim'
+Bundle 'tpope/vim-repeat'
 Bundle 'paredit.vim'
 " I can't get swapit to work; try some more
 Bundle 'mjbrownie/swapit'
