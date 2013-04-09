@@ -330,6 +330,7 @@ vnoremap <Leader>s :s//g<left><left>
 " I could add another `ii` to select the next-outer indent
 " I could define a set of macros, run them with @a, do something manual, @b for rest
 nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
 
 " Remap <f1> to <esc> in every mode to accommodate fat-fingering
 nmap <f1> <esc>
