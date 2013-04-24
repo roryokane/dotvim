@@ -21,11 +21,11 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 	ln -s ~/.vim/vimrc ~/.vimrc
 	ln -s ~/.vim/gvimrc ~/.gvimrc
 
-#### On Windows:
+#### On Windows (as administrator):
 
 	cd %USERPROFILE%
-	mklink /H _vimrc .vim\vimrc
-	mklink /H _gvimrc .vim\gvimrc
+	mklink _vimrc .vim\vimrc
+	mklink _gvimrc .vim\gvimrc
 
 ### Download remote plugins
 
