@@ -43,6 +43,7 @@ if s:on_windows
 else
 	" not hiding MacVim toolbar yet; investigating substitute for its session-related
 	" buttons first
+	" see `:help Session`
 endif
 
 
