@@ -121,9 +121,10 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
-set hlsearch
+" Do not highlight searches by default
+" (the vim-unimpaired plugin provides `coh` to toggle this when needed)
+" (my <Space> mapping below also temporarily turns off highlighting)
+set nohlsearch
 
 " Modelines have historically been a source of security vulnerabilities.  As
 " such, it may be a good idea to disable them and use the securemodelines
@@ -262,10 +263,6 @@ let g:mapleader=","
 " which is the default
 " this is currently being overwritten by yrrecord in YankRing; TODO fix
 noremap Y y$
-
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
 
 " Press space bar to turn off search highlighting and clear any message displayed
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
