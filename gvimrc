@@ -6,7 +6,7 @@ let s:on_unix = has('unix')
 "let s:on_mac = 0
 "let s:on_linux = 0
 "if s:on_unix
-"	let s:uname = system("echo -n \"$(uname)\"")
+"	let s:uname = system("printf \"$(uname)\"")
 "	if !v:shell_error
 "		if s:uname == "Darwin"
 "			let s:on_mac = 1
