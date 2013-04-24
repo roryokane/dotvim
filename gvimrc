@@ -1,6 +1,22 @@
 let s:on_windows = has('win32') || has('win64')
 let s:on_unix = has('unix')
 
+" disabled because none of my settings so far care
+"  what flavor of Unix they use
+"let s:on_mac = 0
+"let s:on_linux = 0
+"if s:on_unix
+"	let s:uname = system("echo -n \"$(uname)\"")
+"	if !v:shell_error
+"		if s:uname == "Darwin"
+"			let s:on_mac = 1
+"		endif
+"		if s:uname == "Linux"
+"			let s:on_linux = 1
+"		endif
+"	endif
+"endif
+
 
 " ---
 " Text formatting
