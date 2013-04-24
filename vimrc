@@ -218,6 +218,8 @@ runtime macros/matchit.vim
 " automatically create folds based on syntax
 set foldmethod=syntax
 set foldlevelstart=99
+" enable folding for XML, where it's disabled by default
+let g:xml_syntax_folding = 1
 
 " scroll to show always show some lines around the cursor
 set scrolloff=3
