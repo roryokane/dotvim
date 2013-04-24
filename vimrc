@@ -363,5 +363,10 @@ command CDC cd %:p:h
 
 " TODO fix that pasting lines adds an extra blank line to the end
 
+" TODO add mapping to create blank comment from Normal or Insert mode,
+"  by default with spaces between delimiters and content
+" e.g. write '// ', '//', '/*  */', or '/**/'
+" I feel like NERDCommenter should do this, but I don't think it does
+
 
 "------------------------------------------------------------
