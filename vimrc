@@ -350,6 +350,7 @@ command CDC cd %:p:h
 " search for trailing whitespace and confirm its deletion
 " based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces#Highlighting_with_a_search
 "  and http://vim.wikia.com/wiki/Remove_unwanted_spaces
+" TODO set options 'highlight' and 'list' before the search
 command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
 
 " TODO fix that autoquoting in Insert mode breaks . repetition
