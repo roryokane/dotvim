@@ -26,7 +26,7 @@ set encoding=utf-8
 "------------------------------------------------------------
 " Vundle plugins
 
-filetype off 
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -346,6 +346,11 @@ cmap <f1> <esc>
 " TODO once saw this command fail when current directory was on a different
 "  drive (Z instead of C). This command's fault? Can I fix it?
 command CDC cd %:p:h
+
+" search for trailing whitespace and confirm its deletion
+" based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces#Highlighting_with_a_search
+"  and http://vim.wikia.com/wiki/Remove_unwanted_spaces
+command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
 
 " TODO fix that autoquoting in Insert mode breaks . repetition
 " TODO fix repeat.vim not allowing me to repeat NERDCommenter commands
