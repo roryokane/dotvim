@@ -331,6 +331,10 @@ vnoremap <Leader>s :s//g<left><left>
 nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
 vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
 
+" view recently opened files
+" I would type 'q' afterwards in the mapping, but that has no effect for some reason
+nnoremap <Leader>bo :browse oldfiles<CR>
+
 " Remap <f1> to <esc> in every mode to accommodate fat-fingering
 nmap <f1> <esc>
 vmap <f1> <esc>
