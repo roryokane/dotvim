@@ -328,8 +328,10 @@ vnoremap <Leader>s :s//g<left><left>
 "  it finds similarly-named different symbols
 " I could add another `ii` to select the next-outer indent
 " I could define a set of macros, run them with @a, do something manual, @b for rest
-nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
-vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//gc<left><left><left><C-R>r
+vmap <Leader>r   "rymr:%s/<C-R>r//gc<left><left><left><C-R>r
+"nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+"vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
 
 " view recently opened files
 " I would type 'q' afterwards in the mapping, but that has no effect for some reason
