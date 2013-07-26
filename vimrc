@@ -348,10 +348,13 @@ lmap <f1> <esc>
 cmap <f1> <esc>
 
 " CDC = Change to Directory of Current file
+" CDCP = Change to Directory of Current file's Parent
 " via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
 " TODO once saw this command fail when current directory was on a different
 "  drive (Z instead of C). This command's fault? Can I fix it?
 command CDC cd %:p:h
+command CDCP cd %:p:h/..
+command CDCPP cd %:p:h/../..
 
 " search for trailing whitespace and confirm its deletion
 " based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces#Highlighting_with_a_search
