@@ -324,6 +324,7 @@ vnoremap <Leader>s :s//g<left><left>
 " TODO stop it highlighting search results outside of the selected area
 " TODO automatically return to mark r after :s completes
 " TODO provide smarter scoping, or a variation or option for whole-file scope
+" TODO map <Leader>rf for whole-file, <Leader>rl for local
 " I don’t use `gd` in this because it’s inaccurate;
 "  it finds similarly-named different symbols
 " I could add another `ii` to select the next-outer indent
