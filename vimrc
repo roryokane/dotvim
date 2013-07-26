@@ -359,6 +359,31 @@ command CDC cd %:p:h
 " TODO set options 'highlight' and 'list' before the search
 command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
 
+
+"------------------------------------------------------------
+" Autocommands
+
+" TODO look up good autocommand templates so I know I'm writing them
+"  correctly, safely, and efficiently
+
+" when loading a given file into a buffer for the first time, run `cd .`
+"  so that its file path in the status line becomes relative to the
+"  working directory
+au BufReadPost *  cd .
+
+" when editing Ruby, use size-2 tabs
+au BufNewFile,BufRead *.rb  set tabstop=2
+au BufNewFile,BufRead *.rb  set shiftwidth=2
+"alternative version that is shorter but that I'm not sure will work
+"au BufNewFile,BufRead *.rb  set tabstop=2 | set shiftwidth=2
+
+" when editing YAML, use spaces for indentation
+au BufNewFile,BufRead *.yaml  set expandtab
+
+
+"------------------------------------------------------------
+" Todo list
+
 " TODO fix that autoquoting in Insert mode breaks . repetition
 " TODO fix repeat.vim not allowing me to repeat NERDCommenter commands
 "  (e.g. ,c<Space>) as I think it’s supposed to
@@ -378,6 +403,3 @@ command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
 "  by default with spaces between delimiters and content
 " e.g. write '// ', '//', '/*  */', or '/**/'
 " I feel like NERDCommenter should do this, but I don't think it does
-
-
-"------------------------------------------------------------
