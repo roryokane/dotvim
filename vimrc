@@ -362,6 +362,13 @@ command CDCPP cd %:p:h/../..
 " TODO set options 'highlight' and 'list' before the search
 command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
 
+" commands to edit the clipboard in a buffer
+" useful for Vim for Windows, which doesn't have the Command key for Cmd-A and Cmd-V
+" Load Clipboard into buffer
+command LC normal ggVG"*pgg0
+" Save Clipboard - copy buffer into clipboard, preserving cursor position
+command SC normal VggoG"*y<C-O>
+
 
 "------------------------------------------------------------
 " Autocommands
