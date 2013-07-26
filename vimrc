@@ -329,8 +329,14 @@ vnoremap <Leader>s :s//g<left><left>
 "  it finds similarly-named different symbols
 " I could add another `ii` to select the next-outer indent
 " I could define a set of macros, run them with @a, do something manual, @b for rest
-nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
-vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//gc<left><left><left><C-R>r
+vmap <Leader>r   "rymr:%s/<C-R>r//gc<left><left><left><C-R>r
+"nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+"vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+
+" view recently opened files
+" I would type 'q' afterwards in the mapping, but that has no effect for some reason
+nnoremap <Leader>bo :browse oldfiles
 
 " Remap <f1> to <esc> in every mode to accommodate fat-fingering
 nmap <f1> <esc>
@@ -343,16 +349,51 @@ lmap <f1> <esc>
 cmap <f1> <esc>
 
 " CDC = Change to Directory of Current file
+" CDCP = Change to Directory of Current file's Parent
 " via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
 " TODO once saw this command fail when current directory was on a different
 "  drive (Z instead of C). This command's fault? Can I fix it?
 command CDC cd %:p:h
+command CDCP cd %:p:h/..
+command CDCPP cd %:p:h/../..
 
 " search for trailing whitespace and confirm its deletion
 " based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces#Highlighting_with_a_search
 "  and http://vim.wikia.com/wiki/Remove_unwanted_spaces
 " TODO set options 'highlight' and 'list' before the search
 command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
+
+" commands to edit the clipboard in a buffer
+" useful for Vim for Windows, which doesn't have the Command key for Cmd-A and Cmd-V
+" Load Clipboard into buffer
+command LC normal ggVG"*pgg0
+" Save Clipboard - copy buffer into clipboard, preserving cursor position
+command SC normal VggoG"*y<C-O>
+
+
+"------------------------------------------------------------
+" Autocommands
+
+" TODO look up good autocommand templates so I know I'm writing them
+"  correctly, safely, and efficiently
+
+" when loading a given file into a buffer for the first time, run `cd .`
+"  so that its file path in the status line becomes relative to the
+"  working directory
+au BufReadPost *  cd .
+
+" when editing Ruby, use size-2 tabs
+au BufNewFile,BufRead *.rb  set tabstop=2
+au BufNewFile,BufRead *.rb  set shiftwidth=2
+"alternative version that is shorter but that I'm not sure will work
+"au BufNewFile,BufRead *.rb  set tabstop=2 | set shiftwidth=2
+
+" when editing YAML, use spaces for indentation
+au BufNewFile,BufRead *.yaml  set expandtab
+
+
+"------------------------------------------------------------
+" Todo list
 
 " TODO fix that autoquoting in Insert mode breaks . repetition
 " TODO fix repeat.vim not allowing me to repeat NERDCommenter commands
@@ -373,6 +414,3 @@ command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
 "  by default with spaces between delimiters and content
 " e.g. write '// ', '//', '/*  */', or '/**/'
 " I feel like NERDCommenter should do this, but I don't think it does
-
-
-"------------------------------------------------------------
