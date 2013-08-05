@@ -233,6 +233,9 @@ set scrolloff=3
 " https://groups.google.com/forum/?fromgroups=#!topic/vim_dev/uqQuSfvuTrc
 set autoread
 
+" let `w` move past straight single quotes (apostrophes) in words
+set iskeyword+='
+
 " TODO automatically reload changed files if the buffer was unedited
 " currently, the GUI pops up a dialog every time
 
