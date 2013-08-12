@@ -236,6 +236,9 @@ set autoread
 " let `w` move past straight single quotes (apostrophes) in words
 set iskeyword+='
 
+" remove comment markers when joining lines
+set formatoptions+=j
+
 " TODO automatically reload changed files if the buffer was unedited
 " currently, the GUI pops up a dialog every time
 
