@@ -52,7 +52,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree' (broke upon Vim 7.4 upgrade)
 Bundle 'airblade/vim-rooter'
 " Syntastic below is not recommended for Windows;
 " disable if it pops up too many cmd windows
