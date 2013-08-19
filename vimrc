@@ -233,8 +233,10 @@ set scrolloff=3
 " https://groups.google.com/forum/?fromgroups=#!topic/vim_dev/uqQuSfvuTrc
 set autoread
 
-" let `w` move past straight single quotes (apostrophes) in words
-set iskeyword+='
+" use prettier characters to represent whitespace in list mode,
+"  and long lines and line wraps
+set listchars=tab:▸\ ,trail:·,extends:…,nbsp:·
+set showbreak=↪\ 
 
 " TODO automatically reload changed files if the buffer was unedited
 " currently, the GUI pops up a dialog every time
