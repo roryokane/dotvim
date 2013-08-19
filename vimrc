@@ -256,8 +256,6 @@ set tabstop=4
 
 "------------------------------------------------------------
 " Mappings
-"
-" Useful mappings
 
 let mapleader=","
 let g:mapleader=","
