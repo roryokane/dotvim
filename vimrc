@@ -52,10 +52,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'scrooloose/nerdcommenter'
-"NERD Tree broke upon Vim 7.4 upgrade
-" on Vim startup, it reports a huge number of errors in
-" .vim\bundle\nerdtree\plugin\nerdtree\path.vim
-"Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-rooter'
 " Syntastic below is not recommended for Windows;
 " disable if it pops up too many cmd windows
