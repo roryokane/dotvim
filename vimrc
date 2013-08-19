@@ -233,8 +233,10 @@ set scrolloff=3
 " https://groups.google.com/forum/?fromgroups=#!topic/vim_dev/uqQuSfvuTrc
 set autoread
 
-" let `w` move past straight single quotes (apostrophes) in words
-set iskeyword+='
+" use prettier characters to represent whitespace in list mode,
+"  and long lines and line wraps
+set listchars=tab:▸\ ,trail:·,extends:…,nbsp:·
+set showbreak=↪\ 
 
 " remove comment markers when joining lines
 set formatoptions+=j
@@ -259,8 +261,6 @@ set tabstop=4
 
 "------------------------------------------------------------
 " Mappings
-"
-" Useful mappings
 
 let mapleader=","
 let g:mapleader=","
@@ -315,6 +315,14 @@ vnoremap > >gv
 " use qq to record
 " if you want Ex mode, run :normal! Q
 nnoremap Q @q
+
+" Disable regexes in search by default. When editing a search pattern,
+" change v to V to enable standard (not Vim-flavored) regexes.
+" see :help \V
+nnoremap / /\V
+vnoremap / /\V
+nnoremap ? ?\V
+vnoremap ? ?\V
 
 " substitute
 nnoremap <Leader>s :%s//g<left><left>
@@ -401,6 +409,15 @@ au BufNewFile,BufRead *.rb  set shiftwidth=2
 
 " when editing YAML, use spaces for indentation
 au BufNewFile,BufRead *.yaml  set expandtab
+
+" customize word characters
+au FileType scss setlocal iskeyword+=-,@-@,$,%
+au FileType css setlocal iskeyword+=-
+au FileType coffee setlocal iskeyword+=$
+
+" TODO let `w` move past straight single quotes (apostrophes) in words,
+"  only in plain text files
+"au FileType [no-file-type] setlocal iskeyword+='
 
 
 "------------------------------------------------------------
