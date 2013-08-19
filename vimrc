@@ -391,6 +391,10 @@ command SC normal VggoG"*y<C-O>
 " (already done; but see if I had better ideas in my OO files than what I've written)
 nnoremap } /^\s*$<CR>:nohl<Bar>:echo<CR>
 nnoremap { ?^\s*$<CR>:nohl<Bar>:echo<CR>
+vnoremap } /^\s*$<CR>
+vnoremap { ?^\s*$<CR>
+onoremap } /^\s*$<CR>:nohl<Bar>:echo<CR>
+onoremap { ?^\s*$<CR>:nohl<Bar>:echo<CR>
 
 
 "------------------------------------------------------------
