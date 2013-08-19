@@ -402,6 +402,15 @@ au BufNewFile,BufRead *.rb  set shiftwidth=2
 " when editing YAML, use spaces for indentation
 au BufNewFile,BufRead *.yaml  set expandtab
 
+" customize word characters
+au FileType scss setlocal iskeyword+=-,@-@,$,%
+au FileType css setlocal iskeyword+=-
+au FileType coffee setlocal iskeyword+=$
+
+" TODO let `w` move past straight single quotes (apostrophes) in words,
+"  only in plain text files
+"au FileType [no-file-type] setlocal iskeyword+='
+
 
 "------------------------------------------------------------
 " Todo list
