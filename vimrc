@@ -313,6 +313,14 @@ vnoremap > >gv
 " if you want Ex mode, run :normal! Q
 nnoremap Q @q
 
+" Disable regexes in search by default. When editing a search pattern,
+" change v to V to enable standard (not Vim-flavored) regexes.
+" see :help \V
+nnoremap / /\V
+vnoremap / /\V
+nnoremap ? ?\V
+vnoremap ? ?\V
+
 " substitute
 nnoremap <Leader>s :%s//g<left><left>
 " in visual mode, the range '<,'> is typed automatically
