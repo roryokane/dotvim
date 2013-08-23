@@ -28,6 +28,9 @@ highlight MatchParen guibg=#423d37
 if s:on_windows
 	set guifont=Consolas:h11:cANSI
 	" looks good in GVim on Windows 7
+	" why do I have cANSI instead of cDEFAULT again?
+	" below font has more Unicode characters on Windows, but uglier otherwise
+	"set guifont=DejaVu_Sans_Mono:h10
 else
 	set guifont=Consolas:h14
 	" looks good in MacVim on Mac OS X
