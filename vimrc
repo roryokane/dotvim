@@ -403,9 +403,9 @@ au FileType ruby  set tabstop=2 | set shiftwidth=2
 au FileType yaml  set expandtab
 
 " customize word characters
-au FileType scss setlocal iskeyword+=-,@-@,$,%
-au FileType css setlocal iskeyword+=-
-au FileType coffee setlocal iskeyword+=$
+au FileType scss  setlocal iskeyword+=-,@-@,$,%
+au FileType css  setlocal iskeyword+=-
+au FileType coffee  setlocal iskeyword+=$
 
 " TODO let `w` move past straight single quotes (apostrophes) in words,
 "  only in plain text files
