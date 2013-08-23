@@ -406,19 +406,19 @@ onoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
 "  working directory
 au BufReadPost *  cd .
 
+" file extensions Vim doesn’t recognize
+au BufNewFile,BufRead *.sscm  setf scheme
+
 " when editing Ruby, use size-2 tabs
-au BufNewFile,BufRead *.rb  set tabstop=2
-au BufNewFile,BufRead *.rb  set shiftwidth=2
-"alternative version that is shorter but that I'm not sure will work
-"au BufNewFile,BufRead *.rb  set tabstop=2 | set shiftwidth=2
+au FileType ruby  set tabstop=2 | set shiftwidth=2
 
 " when editing YAML, use spaces for indentation
-au BufNewFile,BufRead *.yaml  set expandtab
+au FileType yaml  set expandtab
 
 " customize word characters
-au FileType scss setlocal iskeyword+=-,@-@,$,%
-au FileType css setlocal iskeyword+=-
-au FileType coffee setlocal iskeyword+=$
+au FileType scss  setlocal iskeyword+=-,@-@,$,%
+au FileType css  setlocal iskeyword+=-
+au FileType coffee  setlocal iskeyword+=$
 
 " TODO let `w` move past straight single quotes (apostrophes) in words,
 "  only in plain text files
