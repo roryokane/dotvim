@@ -394,13 +394,10 @@ command SC normal VggoG"*y<C-O>
 au BufReadPost *  cd .
 
 " when editing Ruby, use size-2 tabs
-au BufNewFile,BufRead *.rb  set tabstop=2
-au BufNewFile,BufRead *.rb  set shiftwidth=2
-"alternative version that is shorter but that I'm not sure will work
-"au BufNewFile,BufRead *.rb  set tabstop=2 | set shiftwidth=2
+au FileType ruby  set tabstop=2 | set shiftwidth=2
 
 " when editing YAML, use spaces for indentation
-au BufNewFile,BufRead *.yaml  set expandtab
+au FileType yaml  set expandtab
 
 " customize word characters
 au FileType scss setlocal iskeyword+=-,@-@,$,%
