@@ -393,6 +393,9 @@ command SC normal VggoG"*y<C-O>
 "  working directory
 au BufReadPost *  cd .
 
+" file extensions Vim doesn’t recognize
+au BufNewFile,BufRead *.sscm  setf scheme
+
 " when editing Ruby, use size-2 tabs
 au FileType ruby  set tabstop=2 | set shiftwidth=2
 
