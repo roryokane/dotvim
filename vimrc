@@ -387,6 +387,9 @@ command SC normal VggoG"*y<C-O>
 
 " TODO make { and } work with indented blank lines (see OO files in Notes)
 " (already done; but see if I had better ideas in my OO files than what I've written)
+" FIXME this should skip past consecutive blank lines when called when you're
+"  already on a blank line
+" FIXME this overwrites the current search and doesn't restore it
 nnoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
 nnoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
 vnoremap } /\v^\s*$<CR>
