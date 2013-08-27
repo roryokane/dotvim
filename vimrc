@@ -331,9 +331,9 @@ nnoremap ? ?\V
 vnoremap ? ?\V
 
 " substitute
-nnoremap <Leader>s :%s//g<left><left>
+nnoremap <Leader>s :%s/\V/g<left><left>
 " in visual mode, the range '<,'> is typed automatically
-vnoremap <Leader>s :s//g<left><left>
+vnoremap <Leader>s :s/\V/g<left><left>
 
 " easy variable rename (imperfect but useful)
 " inspiration from http://stackoverflow.com/a/597932/578288
