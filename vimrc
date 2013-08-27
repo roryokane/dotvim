@@ -323,7 +323,7 @@ vnoremap > >gv
 nnoremap Q @q
 
 " Disable regexes in search by default. When editing a search pattern,
-" change v to V to enable standard (not Vim-flavored) regexes.
+" change V to v to enable standard (not Vim-flavored) regexes.
 " see :help \V
 nnoremap / /\V
 vnoremap / /\V
