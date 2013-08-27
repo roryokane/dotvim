@@ -254,9 +254,14 @@ set formatoptions+=j
 "
 " Indentation settings according to personal preference.
 
-" Indentation settings for using hard tabs for indent. Display tabs as
-" four characters wide.
-set shiftwidth=4
+" Use hard tabs for indent
+set noexpandtab
+
+" Display tabs as four characters wide
+set shiftwidth=0 " make 'sw' use the value of 'tabstop'; introduced in Vim 7.4
+if &shiftwidth != 0 " if this version of Vim does not support the value 0
+	set shiftwidth=4
+endif
 set tabstop=4
 
 
