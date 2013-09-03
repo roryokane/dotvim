@@ -240,7 +240,10 @@ set listchars=eol:$,tab:▸\ ,trail:·,extends:…,precedes:…,conceal:…,nbsp
 set showbreak=↪\ 
 
 " remove comment markers when joining lines
-set formatoptions+=j
+try
+	set formatoptions+=j
+catch /^Vim\%((\a\+)\)\=:E539/ " the j option was added in Vim 7.4
+endtry
 
 " TODO automatically reload changed files if the buffer was unedited
 " currently, the GUI pops up a dialog every time
@@ -258,10 +261,11 @@ set formatoptions+=j
 set noexpandtab
 
 " Display tabs as four characters wide
-set shiftwidth=0 " make 'sw' use the value of 'tabstop'; introduced in Vim 7.4
-if &shiftwidth != 0 " if this version of Vim does not support the value 0
+try
+	set shiftwidth=0 " make 'sw' use the value of 'tabstop'
+catch /^Vim\%((\a\+)\)\=:E487/ " before Vim 7.4, Vim did not support the value 0
 	set shiftwidth=4
-endif
+endtry
 set tabstop=4
 
 
