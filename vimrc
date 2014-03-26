@@ -473,7 +473,9 @@ au FileType lisp  setlocal iskeyword-={,},[,]
 " TODO find a good mapping for n_<tab>
 " Tab is currently used only by Snipmate, I think in insert mode
 
-" TODO finish adding useful tips from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" TODO finish adding useful tips from the following articles:
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 
 " TODO set scrolloff to a higher number when moving to search results
 "  with n or N
