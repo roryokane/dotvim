@@ -37,7 +37,7 @@ Bundle 'gmarik/vundle'
 " my plugins:
 Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 Bundle 'ScrollColors'
 Bundle 'ap/vim-css-color'
 Bundle 'kchmck/vim-coffee-script'
