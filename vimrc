@@ -1,8 +1,11 @@
-" I, Rory O'Kane, have edited this file, but it is based on the following:
+" Much of this was customized by me, Rory O’Kane, but some was copied from
+"  sources like these:
 "
+" http://vim.wikia.com/wiki/Example_vimrc
 " https://github.com/gmarik/vundle
 " https://github.com/smt/dotvim/
-" http://vim.wikia.com/wiki/Example_vimrc
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 
 "------------------------------------------------------------
 " Features
