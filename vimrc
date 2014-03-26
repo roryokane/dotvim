@@ -252,6 +252,9 @@ try
 catch /^Vim\%((\a\+)\)\=:E539/ " the j option was added in Vim 7.4
 endtry
 
+" don’t display the intro message on starting Vim
+set shortmess+=I
+
 
 "------------------------------------------------------------
 " Indentation options
