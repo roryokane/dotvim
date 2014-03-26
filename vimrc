@@ -124,7 +124,7 @@ set showcmd
 
 " Do not highlight searches by default
 " (the vim-unimpaired plugin provides `coh` to toggle this when needed)
-" (my <Space> mapping below also temporarily turns off highlighting)
+" (my <Leader><Space> mapping below also temporarily turns off highlighting)
 set nohlsearch
 
 " Modelines have historically been a source of security vulnerabilities.  As
@@ -271,8 +271,8 @@ set tabstop=4
 "------------------------------------------------------------
 " Mappings
 
-let mapleader=","
-let g:mapleader=","
+let mapleader=" "
+let g:mapleader=" "
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
@@ -280,7 +280,7 @@ let g:mapleader=","
 noremap Y y$
 
 " Press space bar to turn off search highlighting and clear any message displayed
-nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
+nnoremap <silent> <Space><Space> :nohl<Bar>:echo<CR>
 
 " on wrapped lines, move up and down visually, not logically
 nnoremap j gj
@@ -470,8 +470,5 @@ au FileType lisp  setlocal iskeyword-={,},[,]
 
 " TODO find a good mapping for n_<tab>
 " Tab is currently used only by Snipmate, I think in insert mode
-
-" TODO consider changing <leader> to <space>
-" I could make my current <space> mapping be <space><space> instead
 
 " TODO finish adding useful tips from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
