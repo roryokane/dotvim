@@ -227,8 +227,10 @@ set foldlevelstart=99
 " enable folding for XML, where it's disabled by default
 let g:xml_syntax_folding = 1
 
-" scroll to show always show some lines around the cursor
+" scroll to show always show some lines and columns around the cursor
 set scrolloff=3
+set sidescroll=1
+set sidescrolloff=15
 
 " reload files changed on disk when Vim regains focus,
 "  unless there are local changes
