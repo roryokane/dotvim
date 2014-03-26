@@ -287,7 +287,7 @@ let g:mapleader=" "
 noremap Y y$
 
 " Press space bar to turn off search highlighting and clear any message displayed
-nnoremap <silent> <Space><Space> :nohl<Bar>:echo<CR>
+nnoremap <silent> <Leader><Space> :nohl<Bar>:echo<CR>
 
 " on wrapped lines, move up and down visually, not logically
 nnoremap j gj
