@@ -383,6 +383,9 @@ vmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
 " I would type 'q' afterwards in the mapping, but that has no effect for some reason
 nnoremap <Leader>bo :browse oldfiles<CR>
 
+" toggle NERDTree easily
+nnoremap <Leader>ne :NERDTreeToggle<CR>
+
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
 " via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
