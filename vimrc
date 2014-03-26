@@ -152,6 +152,10 @@ set noswapfile
 set ignorecase
 set smartcase
 
+" Replace all matches on the line, not just the first,
+"  by default, without requiring …/g
+set gdefault
+
 " Incremental search
 set incsearch
 
@@ -246,12 +250,6 @@ try
 catch /^Vim\%((\a\+)\)\=:E539/ " the j option was added in Vim 7.4
 endtry
 
-" TODO automatically reload changed files if the buffer was unedited
-" currently, the GUI pops up a dialog every time
-
-" TODO stop ' in plain text mode from writing ''; I use it for apostrophe
-" sometimes
-
 
 "------------------------------------------------------------
 " Indentation options
@@ -335,10 +333,32 @@ vnoremap / /\V
 nnoremap ? ?\V
 vnoremap ? ?\V
 
+" Remap <f1> to <esc> in every mode to accommodate fat-fingering
+nmap <f1> <esc>
+vmap <f1> <esc>
+xmap <f1> <esc>
+smap <f1> <esc>
+omap <f1> <esc>
+imap <f1> <esc>
+lmap <f1> <esc>
+cmap <f1> <esc>
+
+" TODO make { and } work with indented blank lines (see OO files in Notes)
+" (already done; but see if I had better ideas in my OO files than what I've written)
+" FIXME this should skip past consecutive blank lines when called when you're
+"  already on a blank line
+" FIXME this overwrites the current search and doesn't restore it
+nnoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
+nnoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
+vnoremap } /\v^\s*$<CR>
+vnoremap { ?\v^\s*$<CR>
+onoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
+onoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
+
 " substitute
-nnoremap <Leader>s :%s/\V/g<left><left>
+nnoremap <Leader>s :%s/\V/<left>
 " in visual mode, the range '<,'> is typed automatically
-vnoremap <Leader>s :s/\V/g<left><left>
+vnoremap <Leader>s :s/\V/<left>
 
 " easy variable rename (imperfect but useful)
 " inspiration from http://stackoverflow.com/a/597932/578288
@@ -354,24 +374,14 @@ vnoremap <Leader>s :s/\V/g<left><left>
 "  it finds similarly-named different symbols
 " I could add another `ii` to select the next-outer indent
 " I could define a set of macros, run them with @a, do something manual, @b for rest
-nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//gc<left><left><left><C-R>r
-vmap <Leader>r   "rymr:%s/<C-R>r//gc<left><left><left><C-R>r
-"nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
-"vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//gc<left><left><left><C-R>r
+nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
+vmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
+"nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//c<left><left><C-R>r
+"vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//c<left><left><C-R>r
 
 " view recently opened files
 " I would type 'q' afterwards in the mapping, but that has no effect for some reason
 nnoremap <Leader>bo :browse oldfiles<CR>
-
-" Remap <f1> to <esc> in every mode to accommodate fat-fingering
-nmap <f1> <esc>
-vmap <f1> <esc>
-xmap <f1> <esc>
-smap <f1> <esc>
-omap <f1> <esc>
-imap <f1> <esc>
-lmap <f1> <esc>
-cmap <f1> <esc>
 
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
@@ -395,18 +405,6 @@ command LC normal ggVG"*pgg0
 " Save Clipboard - copy buffer into clipboard, preserving cursor position
 command SC normal VggoG"*y<C-O>
 
-" TODO make { and } work with indented blank lines (see OO files in Notes)
-" (already done; but see if I had better ideas in my OO files than what I've written)
-" FIXME this should skip past consecutive blank lines when called when you're
-"  already on a blank line
-" FIXME this overwrites the current search and doesn't restore it
-nnoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
-nnoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
-vnoremap } /\v^\s*$<CR>
-vnoremap { ?\v^\s*$<CR>
-onoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
-onoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
-
 
 "------------------------------------------------------------
 " Autocommands
@@ -421,17 +419,21 @@ au BufReadPost *  cd .
 
 " file extensions Vim doesn’t recognize
 au BufNewFile,BufRead *.sscm  setf scheme
+au BufNewFile,BufRead *.clj  setf lisp
+au BufNewFile,BufRead *.wisp  setf lisp
 
-" when editing Ruby, use size-2 tabs
+" language indent settings: indent size and tab vs. space
 au FileType ruby  set tabstop=2 | set shiftwidth=2
-
-" when editing YAML, use spaces for indentation
+au FileType coffee  set tabstop=2 | set shiftwidth=2
 au FileType yaml  set expandtab
+" use spaces in Common Lisp and Clojure, but not in Scheme, where I sometimes use sweet-expressions
+au FileType lisp  set expandtab
 
 " customize word characters
 au FileType scss  setlocal iskeyword+=-,@-@,$,%
 au FileType css  setlocal iskeyword+=-
 au FileType coffee  setlocal iskeyword+=$
+au FileType lisp  setlocal iskeyword-={,},[,]
 
 " TODO let `w` move past straight single quotes (apostrophes) in words,
 "  only in plain text files
@@ -459,3 +461,6 @@ au FileType coffee  setlocal iskeyword+=$
 "  by default with spaces between delimiters and content
 " e.g. write '// ', '//', '/*  */', or '/**/'
 " I feel like NERDCommenter should do this, but I don't think it does
+
+" TODO stop ' in plain text mode from writing ''; I use it for apostrophe
+" sometimes
