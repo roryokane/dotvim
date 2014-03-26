@@ -267,6 +267,8 @@ catch /^Vim\%((\a\+)\)\=:E487/ " before Vim 7.4, Vim did not support the value 0
 endtry
 set tabstop=4
 
+" Note that indentation is customized per-language in the Autocommands section.
+
 
 "------------------------------------------------------------
 " Mappings
