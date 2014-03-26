@@ -472,3 +472,6 @@ au FileType lisp  setlocal iskeyword-={,},[,]
 " Tab is currently used only by Snipmate, I think in insert mode
 
 " TODO finish adding useful tips from http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+" TODO set scrolloff to a higher number when moving to search results
+"  with n or N
