@@ -92,6 +92,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'sukima/xmledit'
 Bundle 'vbnet.vim'
 Bundle 'leafo/moonscript-vim'
+Bundle 'ciaranm/detectindent'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
@@ -277,6 +278,11 @@ catch /^Vim\%((\a\+)\)\=:E487/ " before Vim 7.4, Vim did not support the value 0
 	set shiftwidth=4
 endtry
 set tabstop=4
+
+" Settings for the DetectIndent plugin
+let g:detectindent_preferred_indent = 4
+" I do not set g:detectindent_preferred_expandtab ;
+"  this indicates that I prefer noexpandtab
 
 " Note that indentation is customized per-language in the Autocommands section.
 
