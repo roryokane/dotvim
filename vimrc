@@ -413,7 +413,7 @@ vmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
 nnoremap <Leader>bo :browse oldfiles<CR>
 
 " toggle NERDTree easily
-nnoremap <Leader>ne :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
