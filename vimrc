@@ -469,6 +469,9 @@ vmap <silent> <expr> p <sid>Repl()
 "  working directory
 au BufReadPost *  cd .
 
+" detect indentation when opening a new file
+autocmd BufReadPost *  DetectIndent
+
 " TODO reload NERDTree’s file tree when switching focus back into Vim
 " what I want: if NERDTree exists: switch to its window, hit R, then switch back to original window
 " R’s “map option” is “NERDTreeMapRefreshRoot”, but I don’t know if I can use that
