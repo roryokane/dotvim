@@ -37,6 +37,9 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+" TODO review installed plugins and delete ones I don't use
+"  to improve startup time
+
 " my plugins:
 Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
@@ -429,6 +432,11 @@ command SC normal VggoG"*y<C-O>
 "  so that its file path in the status line becomes relative to the
 "  working directory
 au BufReadPost *  cd .
+
+" TODO reload NERDTree’s file tree when switching focus back into Vim
+" what I want: if NERDTree exists: switch to its window, hit R, then switch back to original window
+" R’s “map option” is “NERDTreeMapRefreshRoot”, but I don’t know if I can use that
+"au FocusGained *  CustomFunctionToRefreshRoot
 
 " file extensions Vim doesn’t recognize
 au BufNewFile,BufRead *.sscm  setf scheme
