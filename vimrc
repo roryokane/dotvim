@@ -442,12 +442,12 @@ command SC normal VggoG"*y<C-O>
 "  over all instances
 " function from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
+	let @" = s:restore_reg
+	return ''
 endfunction
 function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
+	let s:restore_reg = @"
+	return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
