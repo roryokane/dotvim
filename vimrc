@@ -346,6 +346,16 @@ vnoremap / /\V
 nnoremap ? ?\V
 vnoremap ? ?\V
 
+" move to end of pasted text, to ease multiple pastes
+vnoremap y y`]
+vnoremap p p`]
+nnoremap p p`]
+
+" quickly select text you just pasted
+" Overwrites a function only used in mappings.
+"  Mappings only need to use normal! to be safe.
+noremap gV `[v`]
+
 " Remap <f1> to <esc> in every mode to accommodate fat-fingering
 nmap <f1> <esc>
 vmap <f1> <esc>
@@ -420,6 +430,26 @@ command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
 command LC normal ggVG"*pgg0
 " Save Clipboard - copy buffer into clipboard, preserving cursor position
 command SC normal VggoG"*y<C-O>
+
+
+"------------------------------------------------------------
+" Mappings that rely on other mappings
+" Mappings that don’t use noremap should be placed here, near the end, so they
+"  are not overwritten by noremap mappings.
+
+" prevent v_p from swapping the paste buffer
+" this makes it easier to rename a variable by pasting its new name
+"  over all instances
+" function from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 
 
 "------------------------------------------------------------
