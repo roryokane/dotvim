@@ -250,7 +250,7 @@ set autoread
 " use prettier characters to represent whitespace in list mode,
 "  and long lines and line wraps
 " possible eol characters if I wanted one: ↩, ↲, ⬎, or ⤸
-set listchars=tab:▸\ ,trail:·,extends:…,nbsp:·
+set listchars=tab:▸\ ,trail:·,extends:…,precedes:…,nbsp:·
 set showbreak=↪\ 
 
 " remove comment markers when joining lines
