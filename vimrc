@@ -277,6 +277,13 @@ try
 catch /^Vim\%((\a\+)\)\=:E487/ " before Vim 7.4, Vim did not support the value 0
 	set shiftwidth=4
 endtry
+try
+	set softtabstop=-1 " make 'sts' use the value of 'sw'
+catch /^Vim\%((\a\+)\)\=:E487/ " before Vim 7.4, Vim did not support the value -1
+	" I usually won’t need this because expandtab will be off, but setting
+	"  this makes changing expandtab simpler
+	set softtabstop=4
+endtry
 set tabstop=4
 
 " Settings for the DetectIndent plugin
