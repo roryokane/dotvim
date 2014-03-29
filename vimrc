@@ -82,8 +82,6 @@ Bundle 'tpope/vim-abolish'
 "Bundle 'YankRing.vim'
 " delimitMate is an untried alternative to the below AutoClose--Alves
 Bundle 'AutoClose--Alves'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'tpope/vim-repeat'
 Bundle 'paredit.vim'
 " I can't get swapit to work; try some more
