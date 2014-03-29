@@ -440,10 +440,21 @@ command CDCPP cd %:p:h/../..
 command -nargs=* -complete=help Help tab help <args>
 
 " search for trailing whitespace and confirm its deletion
-" based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces#Highlighting_with_a_search
+" based on https://github.com/bronson/vim-trailing-whitespace
+"  and http://vim.wikia.com/wiki/Highlight_unwanted_spaces#Highlighting_with_a_search
 "  and http://vim.wikia.com/wiki/Remove_unwanted_spaces
-" TODO set options 'highlight' and 'list' before the search
-command TrailingWhitespaceDelete :%s/\(\S\+\)\@<=\s\+$//c
+function! s:TrailingWhitespaceDelete(line1,line2)
+	let l:saved_cursor = getpos(".")
+	let l:saved_hlsearch = &hlsearch
+	let l:saved_list = &list
+	set hlsearch
+	set list
+	silent! execute ':' . a:line1 . ',' . a:line2 . 's/\(\S\+\)\@<=\s\+$//c'
+	call setpos('.', l:saved_cursor)
+	let &hlsearch = l:saved_hlsearch
+	let &list = l:saved_list
+endfunction
+command! -range=% TrailingWhitespaceDelete call <SID>TrailingWhitespaceDelete(<line1>,<line2>)
 
 " commands to edit the clipboard in a buffer
 " useful for Vim for Windows, which doesn't have the Command key for Cmd-A and Cmd-V
