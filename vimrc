@@ -87,6 +87,7 @@ Plugin 'leafo/moonscript-vim'
 Plugin 'roryokane/detectindent'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
@@ -245,7 +246,7 @@ set autoread
 "  and long lines and line wraps
 " possible eol characters if I wanted one: ↩, ↲, ⬎, or ⤸
 set listchars=tab:▸\ ,trail:·,extends:…,precedes:…,nbsp:·
-set showbreak=↪\ 
+set showbreak=↪\  " comment is here to make the whitespace not be trailing
 
 " remove comment markers when joining lines
 try
