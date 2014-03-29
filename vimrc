@@ -35,63 +35,63 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " TODO review installed plugins and delete ones I don't use
 "  to improve startup time
 
 " my plugins:
-Bundle 'flazz/vim-colorschemes'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
-Bundle 'ScrollColors'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'jQuery'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/vim-snippets'
-Bundle 'garbas/vim-snipmate'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'airblade/vim-rooter'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ScrollColors'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'jQuery'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-rooter'
 " Syntastic below is not recommended for Windows;
 " disable if it pops up too many cmd windows
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-surround'
-Bundle 'tristen/vim-sparkup'
-Bundle 'ervandew/supertab'
-Bundle 'sjl/gundo.vim'
-Bundle 'greplace.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'int3/vim-extradite'
-Bundle 'tpope/vim-endwise'
-Bundle 'bufkill.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'tpope/vim-abolish'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-surround'
+Plugin 'tristen/vim-sparkup'
+Plugin 'ervandew/supertab'
+Plugin 'sjl/gundo.vim'
+Plugin 'greplace.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'int3/vim-extradite'
+Plugin 'tpope/vim-endwise'
+Plugin 'bufkill.vim'
+Plugin 'bufexplorer.zip'
+Plugin 'tpope/vim-abolish'
 " disabling YankRing until I fix it overriding my Y mapping
-"Bundle 'YankRing.vim'
+"Plugin 'YankRing.vim'
 " delimitMate is an untried alternative to the below AutoClose--Alves
-Bundle 'AutoClose--Alves'
-Bundle 'tpope/vim-repeat'
-Bundle 'paredit.vim'
+Plugin 'AutoClose--Alves'
+Plugin 'tpope/vim-repeat'
+Plugin 'paredit.vim'
 " I can't get swapit to work; try some more
-Bundle 'mjbrownie/swapit'
-Bundle 'tpope/vim-speeddating'
-Bundle 'sukima/xmledit'
-Bundle 'leafo/moonscript-vim'
+Plugin 'mjbrownie/swapit'
+Plugin 'tpope/vim-speeddating'
+Plugin 'sukima/xmledit'
+Plugin 'leafo/moonscript-vim'
 " DetectIndent is my own fork, with more features than the abandoned original
 "  and a few improvements from the fork it’s based on
-Bundle 'roryokane/detectindent'
-Bundle 'sheerun/vim-polyglot'
-Bundle 'mileszs/ack.vim'
+Plugin 'roryokane/detectindent'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'mileszs/ack.vim'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
-filetype indent plugin on
+filetype plugin indent on
 
 
 "------------------------------------------------------------
