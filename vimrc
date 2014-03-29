@@ -88,6 +88,8 @@ Plugin 'roryokane/detectindent'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-scriptease'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
