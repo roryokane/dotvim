@@ -539,5 +539,9 @@ au FileType lisp  setlocal iskeyword-={,},[,]
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 
+" TODO add useful customizations from the following vimrcs:
+" https://github.com/tpope/vim-sensible
+" https://github.com/sheerun/vimrc
+
 " TODO set scrolloff to a higher number when moving to search results
 "  with n or N
