@@ -104,6 +104,9 @@ let g:yankring_history_dir = '$HOME/.vim'
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+" don’t warn about trailing whitespace, because I like to indent even
+"  blank lines, but Vim sees that indentation as trailing whitespace
+let g:airline#extensions#whitespace#checks = [ 'indent' ]
 
 
 "------------------------------------------------------------
