@@ -45,14 +45,8 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ScrollColors'
-Bundle 'ap/vim-css-color'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'othree/html5.vim'
-Bundle 'tpope/vim-haml'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'jQuery'
-Bundle 'pangloss/vim-javascript'
-Bundle 'gmarik/vim-markdown'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
@@ -63,7 +57,6 @@ Bundle 'airblade/vim-rooter'
 " Syntastic below is not recommended for Windows;
 " disable if it pops up too many cmd windows
 Bundle 'scrooloose/syntastic'
-Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
@@ -88,11 +81,11 @@ Bundle 'paredit.vim'
 Bundle 'mjbrownie/swapit'
 Bundle 'tpope/vim-speeddating'
 Bundle 'sukima/xmledit'
-Bundle 'vbnet.vim'
 Bundle 'leafo/moonscript-vim'
 " DetectIndent is my own fork, with more features than the abandoned original
 "  and a few improvements from the fork it’s based on
 Bundle 'roryokane/detectindent'
+Bundle 'sheerun/vim-polyglot'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
@@ -486,7 +479,6 @@ autocmd BufReadPost *  DetectIndent
 
 " file extensions Vim doesn’t recognize
 au BufNewFile,BufRead *.sscm  setf scheme
-au BufNewFile,BufRead *.clj  setf lisp
 au BufNewFile,BufRead *.wisp  setf lisp
 
 " language indent settings: indent size and tab vs. space
