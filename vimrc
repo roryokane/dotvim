@@ -86,6 +86,7 @@ Bundle 'leafo/moonscript-vim'
 "  and a few improvements from the fork it’s based on
 Bundle 'roryokane/detectindent'
 Bundle 'sheerun/vim-polyglot'
+Bundle 'mileszs/ack.vim'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
