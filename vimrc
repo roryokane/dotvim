@@ -100,6 +100,9 @@ filetype plugin indent on
 
 let g:yankring_history_dir = '$HOME/.vim'
 
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
 
 "------------------------------------------------------------
 " Must have options
