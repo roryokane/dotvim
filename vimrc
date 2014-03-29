@@ -478,7 +478,7 @@ autocmd BufReadPost *  DetectIndent
 " R’s “map option” is “NERDTreeMapRefreshRoot”, but I don’t know if I can use that
 "au FocusGained *  CustomFunctionToRefreshRoot
 
-" file extensions Vim doesn’t recognize
+" file extensions that neither Vim nor vim-polyglot recognize
 au BufNewFile,BufRead *.sscm  setf scheme
 au BufNewFile,BufRead *.wisp  setf lisp
 
