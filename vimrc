@@ -431,6 +431,11 @@ command CDC cd %:p:h
 command CDCP cd %:p:h/..
 command CDCPP cd %:p:h/../..
 
+" Help command to open help in a new tab
+" help-argument-taking syntax taken from http://stackoverflow.com/a/14601793/578288
+" remember also that :vertical help opens help in a vertical split pane
+command -nargs=* -complete=help Help tab help <args>
+
 " search for trailing whitespace and confirm its deletion
 " based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces#Highlighting_with_a_search
 "  and http://vim.wikia.com/wiki/Remove_unwanted_spaces
