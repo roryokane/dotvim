@@ -92,7 +92,9 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'sukima/xmledit'
 Bundle 'vbnet.vim'
 Bundle 'leafo/moonscript-vim'
-Bundle 'ciaranm/detectindent'
+" DetectIndent is my own fork, with more features than the abandoned original
+"  and a few improvements from the fork it’s based on
+Bundle 'roryokane/detectindent'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
