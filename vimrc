@@ -504,21 +504,31 @@ autocmd BufReadPost *  DetectIndent
 "au FocusGained *  CustomFunctionToRefreshRoot
 
 " file extensions that neither Vim nor vim-polyglot recognize
-au BufNewFile,BufRead *.sscm  setf scheme
-au BufNewFile,BufRead *.wisp  setf lisp
+augroup filetypes_for_file_extensions
+	autocmd!
+	au BufNewFile,BufRead *.sscm  setf scheme
+	au BufNewFile,BufRead *.wisp  setf lisp
+augroup END
 
 " language indent settings: indent size and tab vs. space
-au FileType ruby  set tabstop=2 | set shiftwidth=2
-au FileType coffee  set tabstop=2 | set shiftwidth=2
-au FileType yaml  set expandtab
-" use spaces in Common Lisp and Clojure, but not in Scheme, where I sometimes use sweet-expressions
-au FileType lisp  set expandtab
+augroup indent_settings_for_filetypes
+	autocmd!
+	au FileType ruby  set tabstop=2 | set shiftwidth=2
+	au FileType coffee  set tabstop=2 | set shiftwidth=2
+	au FileType yaml  set expandtab
+	" use spaces in Common Lisp and Clojure, but not in Scheme, where I sometimes use sweet-expressions
+	au FileType lisp  set expandtab
+	au FileType clojure  set expandtab
+augroup END
 
 " customize word characters
-au FileType scss  setlocal iskeyword+=-,@-@,$,%
-au FileType css  setlocal iskeyword+=-
-au FileType coffee  setlocal iskeyword+=$
-au FileType lisp  setlocal iskeyword-={,},[,]
+augroup word_characters_for_filetypes
+	autocmd!
+	au FileType scss  setlocal iskeyword+=-,@-@,$,%
+	au FileType css  setlocal iskeyword+=-
+	au FileType coffee  setlocal iskeyword+=$
+	au FileType lisp  setlocal iskeyword-={,},[,]
+augroup END
 
 " TODO let `w` move past straight single quotes (apostrophes) in words,
 "  only in plain text files
