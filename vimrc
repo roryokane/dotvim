@@ -468,10 +468,10 @@ command! -range=% TrailingWhitespaceDelete call <SID>TrailingWhitespaceDelete(<l
 
 " commands to edit the clipboard in a buffer
 " useful for Vim for Windows, which doesn't have the Command key for Cmd-A and Cmd-V
-" Load Clipboard into buffer
-command LC normal ggVG"*pgg0
-" Save Clipboard - copy buffer into clipboard, preserving cursor position
-command SC normal VggoG"*y<C-O>
+" Load From Clipboard into buffer
+command! Lfc  normal! ggVG"*pgg0
+" Save buffer To Clipboard - copy buffer into clipboard, preserving cursor position
+command! Stc  normal! VggoG"*y<C-O>
 
 
 "------------------------------------------------------------
