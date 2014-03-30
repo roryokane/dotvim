@@ -493,7 +493,7 @@ vmap <silent> <expr> p <sid>Repl()
 " when loading a given file into a buffer for the first time, run `cd .`
 "  so that its file path in the status line becomes relative to the
 "  working directory
-au BufReadPost *  cd .
+autocmd BufReadPost *  cd .
 
 " detect indentation when opening a new file
 autocmd BufReadPost *  DetectIndent
@@ -501,38 +501,38 @@ autocmd BufReadPost *  DetectIndent
 " TODO reload NERDTree’s file tree when switching focus back into Vim
 " what I want: if NERDTree exists: switch to its window, hit R, then switch back to original window
 " R’s “map option” is “NERDTreeMapRefreshRoot”, but I don’t know if I can use that
-"au FocusGained *  CustomFunctionToRefreshRoot
+"autocmd FocusGained *  CustomFunctionToRefreshRoot
 
 " file extensions that neither Vim nor vim-polyglot recognize
 augroup filetypes_for_file_extensions
 	autocmd!
-	au BufNewFile,BufRead *.sscm  setf scheme
-	au BufNewFile,BufRead *.wisp  setf lisp
+	autocmd BufNewFile,BufRead *.sscm  setf scheme
+	autocmd BufNewFile,BufRead *.wisp  setf lisp
 augroup END
 
 " language indent settings: indent size and tab vs. space
 augroup indent_settings_for_filetypes
 	autocmd!
-	au FileType ruby  set tabstop=2 | set shiftwidth=2
-	au FileType coffee  set tabstop=2 | set shiftwidth=2
-	au FileType yaml  set expandtab
+	autocmd FileType ruby  set tabstop=2 | set shiftwidth=2
+	autocmd FileType coffee  set tabstop=2 | set shiftwidth=2
+	autocmd FileType yaml  set expandtab
 	" use spaces in Common Lisp and Clojure, but not in Scheme, where I sometimes use sweet-expressions
-	au FileType lisp  set expandtab
-	au FileType clojure  set expandtab
+	autocmd FileType lisp  set expandtab
+	autocmd FileType clojure  set expandtab
 augroup END
 
 " customize word characters
 augroup word_characters_for_filetypes
 	autocmd!
-	au FileType scss  setlocal iskeyword+=-,@-@,$,%
-	au FileType css  setlocal iskeyword+=-
-	au FileType coffee  setlocal iskeyword+=$
-	au FileType lisp  setlocal iskeyword-={,},[,]
+	autocmd FileType scss  setlocal iskeyword+=-,@-@,$,%
+	autocmd FileType css  setlocal iskeyword+=-
+	autocmd FileType coffee  setlocal iskeyword+=$
+	autocmd FileType lisp  setlocal iskeyword-={,},[,]
 augroup END
 
 " TODO let `w` move past straight single quotes (apostrophes) in words,
 "  only in plain text files
-"au FileType [no-file-type] setlocal iskeyword+='
+"autocmd FileType [no-file-type] setlocal iskeyword+='
 
 
 "------------------------------------------------------------
