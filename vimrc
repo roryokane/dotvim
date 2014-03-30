@@ -430,14 +430,14 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
 " TODO once saw this command fail when current directory was on a different
 "  drive (Z instead of C). This command's fault? Can I fix it?
-command CDC cd %:p:h
-command CDCP cd %:p:h/..
-command CDCPP cd %:p:h/../..
+command! CDC  cd %:p:h
+command! CDCP  cd %:p:h/..
+command! CDCPP  cd %:p:h/../..
 
 " Help command to open help in a new tab
 " help-argument-taking syntax taken from http://stackoverflow.com/a/14601793/578288
 " remember also that :vertical help opens help in a vertical split pane
-command -nargs=* -complete=help Help tab help <args>
+command! -nargs=* -complete=help Help  tab help <args>
 
 " reload vimrc, and gvimrc too if applicable, without restarting Vim
 " this does not clear previous settings; it assumes *vimrc files are idempotent
@@ -464,7 +464,7 @@ function! s:TrailingWhitespaceDelete(line1,line2)
 	let &hlsearch = l:saved_hlsearch
 	let &list = l:saved_list
 endfunction
-command! -range=% TrailingWhitespaceDelete call <SID>TrailingWhitespaceDelete(<line1>,<line2>)
+command! -range=% TrailingWhitespaceDelete  call <SID>TrailingWhitespaceDelete(<line1>,<line2>)
 
 " commands to edit the clipboard in a buffer
 " useful for Vim for Windows, which doesn't have the Command key for Cmd-A and Cmd-V
