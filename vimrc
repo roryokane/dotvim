@@ -513,11 +513,13 @@ autocmd BufReadPost *  DetectIndent
 " R’s “map option” is “NERDTreeMapRefreshRoot”, but I don’t know if I can use that
 "autocmd FocusGained *  CustomFunctionToRefreshRoot
 
-" file extensions that neither Vim nor vim-polyglot recognize
+" file extensions that neither Vim nor vim-polyglot recognize correctly
 augroup filetypes_for_file_extensions
 	autocmd!
-	autocmd BufNewFile,BufRead *.sscm  setf scheme
-	autocmd BufNewFile,BufRead *.wisp  setf lisp
+	autocmd BufNewFile,BufRead *.sscm  setfiletype scheme
+	autocmd BufNewFile,BufRead *.wisp  setfiletype lisp
+	" don’t interpret .dat as CSV; it often isn’t
+	autocmd BufNewFile,BufRead *.dat  setfiletype text
 augroup END
 
 " language indent settings: indent size and tab vs. space
