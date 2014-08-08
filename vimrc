@@ -238,7 +238,11 @@ set textwidth=0
 set wrapmargin=0
 " indent wrapped lines
 set showbreak=->
-" set breakindent " not in main vim; need to compile with a patch
+if exists("+breakindent")
+	set breakindent
+	" TODO experiment with good breakindentopt settings after I can test breakindent
+	"set breakindentopt=???
+endif
 
 " enable matchit to have % jump between keywords such as Ruby's do and end
 runtime macros/matchit.vim
