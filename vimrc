@@ -522,10 +522,14 @@ vmap <silent> <expr> p <sid>Repl()
 " when loading a given file into a buffer for the first time, run `cd .`
 "  so that its file path in the status line becomes relative to the
 "  working directory
-autocmd BufReadPost *  cd .
+augroup make_file_path_in_status_line_relative
+	autocmd BufReadPost *  cd .
+augroup END
 
 " detect indentation when opening a new file
-autocmd BufReadPost *  DetectIndent
+augroup detect_indentation_automatically
+	autocmd BufReadPost *  DetectIndent
+augroup END
 
 " TODO reload NERDTree’s file tree when switching focus back into Vim
 " what I want: if NERDTree exists: switch to its window, hit R, then switch back to original window
