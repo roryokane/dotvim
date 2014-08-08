@@ -539,6 +539,11 @@ augroup filetypes_for_file_extensions
 	autocmd BufNewFile,BufRead *.wisp  setfiletype lisp
 	" don’t interpret .dat as CSV; it often isn’t
 	autocmd BufNewFile,BufRead *.dat  setfiletype text
+	" .md is always Markdown, never modula2 for the files I read
+	autocmd BufNewFile,BufRead *.md  setfiletype markdown
+	" fish shell is not supported; zsh is the closest but
+	"  has irrelevant syntax checking; pretend it’s sh
+	autocmd BufNewFile,BufRead *.fish  setfiletype sh
 augroup END
 
 " language indent settings: indent size and tab vs. space
@@ -574,7 +579,6 @@ augroup END
 "  (e.g. ,c<Space>) as I think it’s supposed to
 
 " TODO way to reindent tabs <-> spaces, change number of spaces
-" TODO language-specific indentation styles/sizes
 
 " TODO way to toggle between blank lines being empty or indented
 
