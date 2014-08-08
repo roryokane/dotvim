@@ -22,6 +22,7 @@ let s:on_unix = has('unix')
 " Text formatting
 
 color wombat
+set background=dark
 " halve guibg value of MatchParen so MP is easier to tell apart from Cursor
 highlight MatchParen guibg=#423d37
 

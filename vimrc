@@ -229,6 +229,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 color wombat256
+set background=dark
 
 " wrap, but only in the display, not in the file
 set wrap
