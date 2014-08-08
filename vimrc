@@ -50,7 +50,7 @@ Plugin 'gmarik/vundle'
 " my plugins:
 Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ScrollColors'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'jQuery'
