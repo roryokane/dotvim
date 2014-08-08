@@ -26,6 +26,13 @@ set synmaxcol=2048      " Syntax coloring too-long lines is slow
 set encoding=utf-8
 
 
+" prevent errors when the non-sh-compatible fish shell is the default
+let s:on_unix = has('unix')
+if s:on_unix
+	set shell=/bin/sh
+endif
+
+
 "------------------------------------------------------------
 " Vundle plugins
 
