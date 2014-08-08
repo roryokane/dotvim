@@ -83,7 +83,9 @@ Plugin 'tpope/vim-abolish'
 " delimitMate is an untried alternative to the below AutoClose--Alves
 Plugin 'AutoClose--Alves'
 Plugin 'tpope/vim-repeat'
-Plugin 'paredit.vim'
+" disabling paredit because it’s too hard to turn it off when I need to do
+"  syntax level-editing
+"Plugin 'paredit.vim'
 " I can't get swapit to work; try some more
 Plugin 'mjbrownie/swapit'
 Plugin 'tpope/vim-speeddating'
