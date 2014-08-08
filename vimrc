@@ -94,6 +94,9 @@ Plugin 'leafo/moonscript-vim'
 " DetectIndent is my own fork, with more features than the abandoned original
 "  and a few improvements from the fork it’s based on
 Plugin 'roryokane/detectindent'
+" TODO change vim-polyglot to use my old Markdown library, which was better
+"  (in more visible syntax highlighting of elements like headers and code)
+"  (in correctly recognizing the .md extension)
 Plugin 'sheerun/vim-polyglot'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
@@ -349,6 +352,13 @@ noremap g^ g0
 vnoremap ` $h
 
 " keep indentation if I press Esc right after o or O
+" TODO make these mappings call a function that either does this or acts
+"  normally depending on a global or buffer-local variable
+"  like l:new_line_keep_indent and g:…
+" and make DetectIndent set that setting appropriately, by having it be a hook
+"  for the other plugin or vice versa
+" I would want to set this on be default, but have it turned off if
+" DetectIndent finds lots of empty blank lines
 nnoremap o ox<BS>
 nnoremap O Ox<BS>
 " also keep indentation if I press Esc right after a newline in Insert mode
@@ -594,3 +604,8 @@ augroup END
 
 " TODO set scrolloff to a higher number when moving to search results
 "  with n or N
+
+" TODO try out tcomment (http://vimawesome.com/plugin/tcomment) instead of NERDCommenter
+"  for its language-in-language detection, like JS within HTML
+"  make sure it works well with linewise and inline comments
+"  and see if it is any better with letting you add spacing around comment delimiters
