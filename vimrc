@@ -252,6 +252,7 @@ runtime macros/matchit.vim
 set foldmethod=syntax
 set foldlevelstart=99
 " enable folding for XML, where it's disabled by default
+" I temporarily disable this when I have to edit large XML files
 let g:xml_syntax_folding = 1
 
 " scroll to show always show some lines and columns around the cursor
@@ -622,3 +623,10 @@ augroup END
 "  for its language-in-language detection, like JS within HTML
 "  make sure it works well with linewise and inline comments
 "  and see if it is any better with letting you add spacing around comment delimiters
+
+" TODO in an Autocommand function that runs on loading an XML file,
+"  `let l:xml_syntax_folding = 1` (locally) only if the XML file is small enough
+"  have it turned off by default
+"  e.g. 'iTunes Music Library.xml' is too large, IndustrySafe XML files are small enough
+"  depending on autocommand run order, I might need to `:e` to
+"  reload the file after change the setting
