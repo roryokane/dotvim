@@ -238,11 +238,15 @@ set nolist
 set textwidth=0
 set wrapmargin=0
 " indent wrapped lines
-set showbreak=->
+set showbreak=↪\  " comment is here to make the whitespace not be trailing
 if exists("+breakindent")
 	set breakindent
-	" TODO experiment with good breakindentopt settings after I can test breakindent
-	"set breakindentopt=???
+	" the default breakindentopt settings are good
+	
+	" an alternative group of settings to try out when I work with
+	"  a file with lots of wrapping:
+	"set showbreak=
+	"set breakindentopt=shift:1
 endif
 
 " enable matchit to have % jump between keywords such as Ruby's do and end
@@ -268,11 +272,9 @@ set sidescrolloff=15
 " https://groups.google.com/forum/?fromgroups=#!topic/vim_dev/uqQuSfvuTrc
 set autoread
 
-" use prettier characters to represent whitespace in list mode,
-"  and long lines and line wraps
+" use prettier characters to represent whitespace and long lines in list mode
 " possible eol characters if I wanted one: ↩, ↲, ⬎, or ⤸
 set listchars=eol:$,tab:▸\ ,trail:·,extends:…,precedes:…,conceal:…,nbsp:·
-set showbreak=↪\  " comment is here to make the whitespace not be trailing
 
 " remove comment markers when joining lines
 try
