@@ -553,12 +553,6 @@ augroup END
 " R’s “map option” is “NERDTreeMapRefreshRoot”, but I don’t know if I can use that
 "autocmd FocusGained *  CustomFunctionToRefreshRoot
 
-" from https://github.com/scrooloose/nerdtree#faq
-augroup open_nerdtree_on_startup_with_no_files_specified
-	autocmd StdinReadPre * let s:std_in=1
-	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-augroup END
-
 " file extensions that neither Vim nor vim-polyglot recognize correctly
 augroup filetypes_for_file_extensions
 	autocmd!
@@ -615,10 +609,8 @@ augroup END
 
 " TODO when Vim opens a directory, keep NERDTree open after choosing a file
 "  from its listing
-" current best workaround is to open Vim from a directory with no arguments,
-"  which I have set up to properly open NERDTree for the current directory
-" another workaround is to open the first file in a vsplit with `s`, and then
-"  manually resize the split to a smaller size
+" current best workaround is to open the first file in a vsplit with `s`, and
+"  then manually resize the split to a smaller size
 " another workaround is to :NERDTreeToggle after opening a directory, which
 "  opens a persistent NERDTree, and then ignore the default,
 "  automatically-opened one
