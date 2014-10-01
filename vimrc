@@ -103,6 +103,10 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-scriptease'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'jrozner/vim-antlr'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-fireplace'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
