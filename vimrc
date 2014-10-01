@@ -331,7 +331,7 @@ let g:detectindent_preferred_indent = 4
 
 let mapleader=" "
 let g:mapleader=" "
-nnoremap <Space> <Nop>
+noremap <Space> <Nop>
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
