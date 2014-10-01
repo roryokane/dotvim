@@ -598,7 +598,9 @@ augroup END
 augroup enable_rainbow_parentheses_for_relevant_filetypes
 	autocmd!
 	autocmd FileType lisp  RainbowParenthesesActivate
+	autocmd FileType lisp  RainbowParenthesesLoadRound
 	autocmd FileType scheme  RainbowParenthesesActivate
+	autocmd FileType scheme  RainbowParenthesesLoadRound
 	autocmd FileType clojure  RainbowParenthesesActivate
 	autocmd FileType clojure  RainbowParenthesesLoadRound
 	autocmd FileType clojure  RainbowParenthesesLoadSquare
