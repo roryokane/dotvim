@@ -550,6 +550,7 @@ augroup filetypes_for_file_extensions
 	autocmd!
 	autocmd BufNewFile,BufRead *.sscm  setfiletype scheme
 	autocmd BufNewFile,BufRead *.wisp  setfiletype lisp
+	autocmd BufNewFile,BufRead *.jisp  setfiletype lisp
 	" don’t interpret .dat as CSV; it often isn’t
 	autocmd BufNewFile,BufRead *.dat  setfiletype text
 	" .md is always Markdown, never modula2 for the files I read
