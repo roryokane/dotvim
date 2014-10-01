@@ -50,8 +50,14 @@ Plugin 'gmarik/vundle'
 " my plugins:
 Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ScrollColors'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'bling/vim-airline'
+" TODO change vim-polyglot to use my old Markdown library, which was better
+"  (in more visible syntax highlighting of elements like headers and code)
+"  (in correctly recognizing the .md extension)
+Plugin 'sheerun/vim-polyglot'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'jQuery'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -82,10 +88,6 @@ Plugin 'tpope/vim-abolish'
 "Plugin 'YankRing.vim'
 " delimitMate is an untried alternative to the below AutoClose--Alves
 Plugin 'AutoClose--Alves'
-Plugin 'tpope/vim-repeat'
-" disabling paredit because it’s too hard to turn it off when I need to do
-"  syntax level-editing
-"Plugin 'paredit.vim'
 " I can't get swapit to work; try some more
 Plugin 'mjbrownie/swapit'
 Plugin 'tpope/vim-speeddating'
@@ -94,17 +96,12 @@ Plugin 'leafo/moonscript-vim'
 " DetectIndent is my own fork, with more features than the abandoned original
 "  and a few improvements from the fork it’s based on
 Plugin 'roryokane/detectindent'
-" TODO change vim-polyglot to use my old Markdown library, which was better
-"  (in more visible syntax highlighting of elements like headers and code)
-"  (in correctly recognizing the .md extension)
-Plugin 'sheerun/vim-polyglot'
 Plugin 'mileszs/ack.vim'
-Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-scriptease'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'jrozner/vim-antlr'
-Plugin 'guns/vim-clojure-static'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
 
