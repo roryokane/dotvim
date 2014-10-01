@@ -101,9 +101,12 @@ Plugin 'tpope/vim-scriptease'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'jrozner/vim-antlr'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
+Plugin 'dahu/bisectly'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
