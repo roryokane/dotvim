@@ -102,6 +102,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-scriptease'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'jrozner/vim-antlr'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
@@ -567,6 +568,9 @@ augroup indent_settings_for_filetypes
 	" use spaces in Common Lisp and Clojure, but not in Scheme, where I sometimes use sweet-expressions
 	autocmd FileType lisp  set expandtab
 	autocmd FileType clojure  set expandtab
+	" ANTLR grammars normally use indents for alignment, so should use spaces
+	autocmd FileType antlr3  set expandtab
+	autocmd FileType antlr4  set expandtab
 augroup END
 
 " customize word characters
