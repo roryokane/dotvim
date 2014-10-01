@@ -586,6 +586,16 @@ augroup indent_settings_for_filetypes
 	autocmd FileType antlr4  set expandtab
 augroup END
 
+augroup enable_rainbow_parentheses_for_relevant_filetypes
+	autocmd!
+	autocmd FileType lisp  RainbowParenthesesActivate
+	autocmd FileType scheme  RainbowParenthesesActivate
+	autocmd FileType clojure  RainbowParenthesesActivate
+	autocmd FileType clojure  RainbowParenthesesLoadRound
+	autocmd FileType clojure  RainbowParenthesesLoadSquare
+	autocmd FileType clojure  RainbowParenthesesLoadBraces
+augroup END
+
 " customize word characters
 augroup word_characters_for_filetypes
 	autocmd!
