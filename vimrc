@@ -332,11 +332,13 @@ let g:detectindent_preferred_indent = 4
 let mapleader=" "
 let g:mapleader=" "
 noremap <Space> <Nop>
+sunmap <Space>
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 " this is currently being overwritten by yrrecord in YankRing; TODO fix
 noremap Y y$
+sunmap Y
 
 " Mapping to turn off search highlighting and clear any message displayed
 nnoremap <silent> <Leader><Space> :nohl<Bar>:echo<CR>
@@ -344,8 +346,8 @@ nnoremap <silent> <Leader><Space> :nohl<Bar>:echo<CR>
 " on wrapped lines, move up and down visually, not logically
 nnoremap j gj
 nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+xnoremap j gj
+xnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up> gk
 vnoremap <Down> gj
@@ -366,8 +368,19 @@ noremap g$ g'
 noremap g` g$
 noremap g' g`
 noremap g^ g0
+" undo all those mappings in Select mode
+sunmap 0
+sunmap $
+sunmap `
+sunmap '
+sunmap ^
+sunmap g0
+sunmap g$
+sunmap g`
+sunmap g'
+sunmap g^
 " stop selecting the newline in Visual mode
-vnoremap ` $h
+xnoremap ` $h
 
 " keep indentation if I press Esc right after o or O
 " TODO make these mappings call a function that either does this or acts
@@ -383,8 +396,8 @@ nnoremap O Ox<BS>
 inoremap <Esc> x<BS><Esc>
 
 " when indenting with < and >, make it easy to repeat
-vnoremap < <gv
-vnoremap > >gv
+xnoremap < <gv
+xnoremap > >gv
 
 " run recorded macros easily
 " use qq to record
@@ -395,29 +408,20 @@ nnoremap Q @q
 " change V to v to enable standard (not Vim-flavored) regexes.
 " see :help \V
 nnoremap / /\V
-vnoremap / /\V
+xnoremap / /\V
 nnoremap ? ?\V
-vnoremap ? ?\V
+xnoremap ? ?\V
 
 " move to end of pasted text, to ease multiple pastes
-vnoremap y y`]
-vnoremap p p`]
+xnoremap y y`]
+xnoremap p p`]
 nnoremap p p`]
 
 " quickly select text you just pasted
 " Overwrites a function only used in mappings.
 "  Mappings only need to use normal! to be safe.
 noremap gV `[v`]
-
-" Remap <f1> to <esc> in every mode to accommodate fat-fingering
-nmap <f1> <esc>
-vmap <f1> <esc>
-xmap <f1> <esc>
-smap <f1> <esc>
-omap <f1> <esc>
-imap <f1> <esc>
-lmap <f1> <esc>
-cmap <f1> <esc>
+sunmap gV
 
 " TODO make { and } work with indented blank lines (see OO files in Notes)
 " (already done; but see if I had better ideas in my OO files than what I've written)
@@ -426,34 +430,15 @@ cmap <f1> <esc>
 " FIXME this overwrites the current search and doesn't restore it
 nnoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
 nnoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
-vnoremap } /\v^\s*$<CR>
-vnoremap { ?\v^\s*$<CR>
+xnoremap } /\v^\s*$<CR>
+xnoremap { ?\v^\s*$<CR>
 onoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
 onoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
 
 " substitute
 nnoremap <Leader>s :%s/\V/<left>
 " in visual mode, the range '<,'> is typed automatically
-vnoremap <Leader>s :s/\V/<left>
-
-" easy variable rename (imperfect but useful)
-" inspiration from http://stackoverflow.com/a/597932/578288
-" uses indentation for block, not {}, which only works in C-like languages, or
-"  b (`vib`), which doesn’t work at all with Ruby do…end blocks
-" note: `vii` depends on plugin michaeljsmith/vim-indent-object, so not using nnoremap
-" use 'r to get back to variable position afterwards (given my ' mapping)
-" TODO stop it highlighting search results outside of the selected area
-" TODO automatically return to mark r after :s completes
-" TODO provide smarter scoping, or a variation or option for whole-file scope
-" TODO map <Leader>rf for whole-file, <Leader>rl for local
-" I don’t use `gd` in this because it’s inaccurate;
-"  it finds similarly-named different symbols
-" I could add another `ii` to select the next-outer indent
-" I could define a set of macros, run them with @a, do something manual, @b for rest
-nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
-vmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
-"nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//c<left><left><C-R>r
-"vmap <Leader>r   "rymrvii:s/\<<C-R>r\>//c<left><left><C-R>r
+xnoremap <Leader>s :s/\V/<left>
 
 " view recently opened files
 " I would type 'q' afterwards in the mapping, but that has no effect for some reason
@@ -531,7 +516,34 @@ function! s:Repl()
 	let s:restore_reg = @"
 	return "p@=RestoreRegister()\<cr>"
 endfunction
-vmap <silent> <expr> p <sid>Repl()
+xmap <silent> <expr> p <sid>Repl()
+
+" easy variable rename (imperfect but useful)
+" inspiration from http://stackoverflow.com/a/597932/578288
+" uses indentation for block, not {}, which only works in C-like languages, or
+"  b (`vib`), which doesn’t work at all with Ruby do…end blocks
+" note: `vii` depends on plugin michaeljsmith/vim-indent-object, so not using nnoremap
+" use 'r to get back to variable position afterwards (given my ' mapping)
+" TODO stop it highlighting search results outside of the selected area
+" TODO automatically return to mark r after :s completes
+" TODO provide smarter scoping, or a variation or option for whole-file scope
+" TODO map <Leader>rf for whole-file, <Leader>rl for local
+" I don’t use `gd` in this because it’s inaccurate;
+"  it finds similarly-named different symbols
+" I could add another `ii` to select the next-outer indent
+" I could define a set of macros, run them with @a, do something manual, @b for rest
+nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
+xmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
+"nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//c<left><left><C-R>r
+"xmap <Leader>r   "rymrvii:s/\<<C-R>r\>//c<left><left><C-R>r
+
+" Remap <f1> to <esc> in every mode to accommodate fat-fingering
+nmap <f1> <esc>
+vmap <f1> <esc>
+omap <f1> <esc>
+imap <f1> <esc>
+lmap <f1> <esc>
+cmap <f1> <esc>
 
 
 "------------------------------------------------------------
