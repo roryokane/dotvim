@@ -447,9 +447,6 @@ nnoremap <Leader>bo :browse oldfiles<CR>
 " toggle NERDTree easily
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
-" open BufExplorer easily
-nnoremap <Leader>b :BufExplorer<CR>
-
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
 " via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
