@@ -674,3 +674,9 @@ augroup END
 "  e.g. 'iTunes Music Library.xml' is too large, IndustrySafe XML files are small enough
 "  depending on autocommand run order, I might need to `:e` to
 "  reload the file after change the setting
+
+" TODO run `:smap` followed by each printable character to find Select-mode
+"  mappings (which shouldn’t exist) from plugins. Then update each plugin to
+"  add `sunmap` to fix this, and make a pull request, or a fork if the
+"  original is abandoned. I have already done this for bufexplorer and
+"  vim-rooter; see those commits and pull requests for templates.
