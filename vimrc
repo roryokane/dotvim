@@ -82,7 +82,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'int3/vim-extradite'
 Plugin 'tpope/vim-endwise'
 Plugin 'bufkill.vim'
-Plugin 'bufexplorer.zip'
+Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tpope/vim-abolish'
 " disabling YankRing until I fix it overriding my Y mapping
 "Plugin 'YankRing.vim'
