@@ -327,13 +327,14 @@ let g:detectindent_preferred_indent = 4
 
 let mapleader=" "
 let g:mapleader=" "
+nnoremap <Space> <Nop>
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 " this is currently being overwritten by yrrecord in YankRing; TODO fix
 noremap Y y$
 
-" Press space bar to turn off search highlighting and clear any message displayed
+" Mapping to turn off search highlighting and clear any message displayed
 nnoremap <silent> <Leader><Space> :nohl<Bar>:echo<CR>
 
 " on wrapped lines, move up and down visually, not logically
