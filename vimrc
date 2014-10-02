@@ -44,24 +44,29 @@ call vundle#rc()
 " let Vundle manage Vundle
 Plugin 'gmarik/vundle'
 
+
+" my plugins:
+
 " TODO review installed plugins and delete ones I don't use
 "  to improve startup time
 
-" my plugins:
+" libraries used by some scripts
+" used by most tpope scripts, at least
+Plugin 'tpope/vim-repeat'
+" used by snipmate, at least
+Plugin 'MarcWeber/vim-addon-mw-utils'
+" used by snipmate, at least
+Plugin 'tomtom/tlib_vim'
+
+" for all of Vim
 Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ScrollColors'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-repeat'
 Plugin 'bling/vim-airline'
 " TODO change vim-polyglot to use my old Markdown library, which was better
 "  (in more visible syntax highlighting of elements like headers and code)
 "  (in correctly recognizing the .md extension)
-Plugin 'sheerun/vim-polyglot'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'jQuery'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate'
 Plugin 'scrooloose/nerdcommenter'
@@ -71,16 +76,12 @@ Plugin 'airblade/vim-rooter'
 " disable if it pops up too many cmd windows
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-surround'
-Plugin 'tristen/vim-sparkup'
 Plugin 'ervandew/supertab'
 Plugin 'sjl/gundo.vim'
 Plugin 'greplace.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'int3/vim-extradite'
-Plugin 'tpope/vim-endwise'
 Plugin 'bufkill.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tpope/vim-abolish'
@@ -91,14 +92,27 @@ Plugin 'AutoClose--Alves'
 " I can't get swapit to work; try some more
 Plugin 'mjbrownie/swapit'
 Plugin 'tpope/vim-speeddating'
-Plugin 'sukima/xmledit'
-Plugin 'leafo/moonscript-vim'
 " DetectIndent is my own fork, with more features than the abandoned original
 "  and a few improvements from the fork it’s based on
 Plugin 'roryokane/detectindent'
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-scriptease'
+Plugin 'othree/eregex.vim'
+Plugin 'dahu/bisectly'
+
+" integration with external tools
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'int3/vim-extradite'
+
+" specific to certain languages
+Plugin 'sheerun/vim-polyglot'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'tpope/vim-endwise'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'tpope/vim-scriptease'
+Plugin 'tristen/vim-sparkup'
+Plugin 'sukima/xmledit'
+Plugin 'jQuery'
+Plugin 'leafo/moonscript-vim'
 Plugin 'jrozner/vim-antlr'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-sexp'
@@ -106,9 +120,7 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
-Plugin 'dahu/bisectly'
-Plugin 'othree/eregex.vim'
-Plugin 'rking/ag.vim'
+
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
