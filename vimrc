@@ -50,7 +50,7 @@ Plugin 'gmarik/vundle'
 " TODO review installed plugins and delete ones I don't use
 "  to improve startup time
 
-" libraries used by some scripts
+" libraries used by other scripts
 " used by most tpope scripts, at least
 Plugin 'tpope/vim-repeat'
 " used by snipmate, at least
