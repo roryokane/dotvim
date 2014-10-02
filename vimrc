@@ -107,6 +107,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
 Plugin 'dahu/bisectly'
+Plugin 'othree/eregex.vim'
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
@@ -405,12 +406,16 @@ xnoremap > >gv
 nnoremap Q @q
 
 " Disable regexes in search by default. When editing a search pattern,
-" change V to v to enable standard (not Vim-flavored) regexes.
+" change V to v to enable standard (mostly not-Vim-flavored) regexes.
 " see :help \V
 nnoremap / /\V
 xnoremap / /\V
 nnoremap ? ?\V
 xnoremap ? ?\V
+" don’t let the eregex plugin overwrite this
+"  Because I want to search text-only by default.
+"  Use the plugin manually with :M/ and :M? (and :S to substitute).
+let g:eregex_default_enable=0
 
 " move to end of pasted text, to ease multiple pastes
 xnoremap y y`]
