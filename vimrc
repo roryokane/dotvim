@@ -130,6 +130,8 @@ filetype plugin indent on
 
 "------------------------------------------------------------
 " Plugin settings
+" (Not all plugin settings go here. Settings closely related to other
+" functionality in this vimrc are near that specific place.)
 
 let g:yankring_history_dir = '$HOME/.vim'
 
@@ -138,6 +140,12 @@ let g:airline_right_sep=''
 " don’t warn about trailing whitespace, because I like to indent even
 "  blank lines, but Vim sees that indentation as trailing whitespace
 let g:airline#extensions#whitespace#checks = [ 'indent' ]
+
+" Set 'grepprg' for the Greplace plugin. Changing this also affects the
+"  built-in :grep command and plugins that use it, but I don’t think I
+"  depend on any of those.
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 
 "------------------------------------------------------------
