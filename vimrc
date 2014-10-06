@@ -708,3 +708,18 @@ augroup END
 "  add `sunmap` to fix this, and make a pull request, or a fork if the
 "  original is abandoned. I have already done this for bufexplorer and
 "  vim-rooter; see those commits and pull requests for templates.
+
+" TODO fix the sukima/xmledit plugin so that it loads properly in HTML
+" Right now, auto-closing of HTML tags is only enabled in HTML mode after
+"  previously opening XML mode. (It is always enabled in XML mode, as it
+"  should be.)
+" The insert-mode mapping for `>` to InsertGt (see it with `:imap >`) is
+"  missing in HTML mode unless I open XML mode first.
+" Add trace statements to the code to see if and when `html.vim` and `xml.vim`
+"  are called when the filetype is set to html and to xml.
+" The auto-closing does not happen in other filetypes, so whatever plugin it
+"  is is tailored specifically for HTML and XML. It is just loading one of its
+"  features wrong so that it is only activated when loading XML.
+" If I can’t get xmledit to work, I could use
+"  https://github.com/docunext/closetag.vim. But I’m not sure if that’s a
+"  better idea than just switching to XML mode when necessary.
