@@ -530,9 +530,16 @@ command! Stc  normal! VggoG"*y<C-O>
 " prevent v_p from swapping the paste buffer
 " this makes it easier to rename a variable by pasting its new name
 "  over all instances
-" function from http://stackoverflow.com/a/290723/578288
+" function from http://stackoverflow.com/a/290723/578288 and
+"  https://code.google.com/p/lh-vim/source/browse/misc/trunk/macros/repl-visual-no-reg-overwrite.vim
 function! RestoreRegister()
-	let @" = s:restore_reg
+	if &clipboard == 'unnamed'
+		let @* = s:restore_reg
+	elseif &clipboard == 'unnamedplus'
+		let @+ = s:restore_reg
+	else
+		let @" = s:restore_reg
+	endif
 	return ''
 endfunction
 function! s:Repl()
