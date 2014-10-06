@@ -86,6 +86,7 @@ Plugin 'bufkill.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tpope/vim-abolish'
 " disabling YankRing until I fix it overriding my Y mapping
+" yrrecord in YankRing was overriding my `noremap Y y$`
 "Plugin 'YankRing.vim'
 " delimitMate is an untried alternative to the below AutoClose--Alves
 Plugin 'AutoClose--Alves'
@@ -357,8 +358,7 @@ noremap <Space> <Nop>
 sunmap <Space>
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-" this is currently being overwritten by yrrecord in YankRing; TODO fix
+"  which is the default
 noremap Y y$
 sunmap Y
 
@@ -693,14 +693,14 @@ augroup END
 
 " TODO try out tcomment (http://vimawesome.com/plugin/tcomment) instead of NERDCommenter
 "  for its language-in-language detection, like JS within HTML
-"  make sure it works well with linewise and inline comments
+" make sure it works well with linewise and inline comments
 "  and see if it is any better with letting you add spacing around comment delimiters
 
 " TODO in an Autocommand function that runs on loading an XML file,
 "  `let l:xml_syntax_folding = 1` (locally) only if the XML file is small enough
-"  have it turned off by default
-"  e.g. 'iTunes Music Library.xml' is too large, IndustrySafe XML files are small enough
-"  depending on autocommand run order, I might need to `:e` to
+" have it turned off by default
+" e.g. 'iTunes Music Library.xml' is too large, IndustrySafe XML files are small enough
+" depending on autocommand run order, I might need to `:e` to
 "  reload the file after change the setting
 
 " TODO run `:smap` followed by each printable character to find Select-mode
