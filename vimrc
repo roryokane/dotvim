@@ -530,7 +530,7 @@ command! Stc  normal! VggoG"*y<C-O>
 " prevent v_p from swapping the paste buffer
 " this makes it easier to rename a variable by pasting its new name
 "  over all instances
-" function from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+" function from http://stackoverflow.com/a/290723/578288
 function! RestoreRegister()
 	let @" = s:restore_reg
 	return ''
