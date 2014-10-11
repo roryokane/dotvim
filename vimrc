@@ -689,6 +689,8 @@ augroup END
 "  from its listing
 " current workaround is my mapping `<Leader>fn`, which runs :bdelete
 "  followed by :NERDTreeToggle
+" but this workaround fails when the current directory is not the
+"  opened directory
 
 " TODO fix that pasting lines adds an extra blank line to the end
 
