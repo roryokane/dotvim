@@ -318,7 +318,7 @@ set sidescrolloff=15
 set autoread
 
 " use prettier characters to represent whitespace and long lines in list mode
-" various possible eol characters: ¬, ↩, ↲, ⬎, or ⤸
+" some more-indicative but too-wide eol characters: ↩, ↲, ⬎, or ⤸
 set listchars=eol:¬,tab:▸\ ,trail:·,extends:…,precedes:…,conceal:…,nbsp:·
 
 " remove comment markers when joining lines
