@@ -21,18 +21,25 @@ let s:on_unix = has('unix')
 " ---
 " Text formatting
 
+" how to load various color schemes
+" the called function will run after the CLI color scheme is loaded, so
+"  each function just needs to overwrite any values that are different
+" an empty function means it doesn’t need to change anything compared to CLI
 function! s:LoadGUIColorSchemeWombat()
 	colorscheme wombat
-	set background=dark
 	" halve guibg value of MatchParen so MP is easier to tell apart from Cursor
 	highlight MatchParen guibg=#423d37
 endfunction
 function! s:LoadGUIColorSchemeSolarized()
-	colorscheme solarized
-	set background=dark
+endfunction
+function! s:LoadGUIColorSchemeSolarizedLight()
+	call <SID>LoadGUIColorSchemeSolarized()
+endfunction
+function! s:LoadGUIColorSchemeSolarizedDark()
+	call <SID>LoadGUIColorSchemeSolarized()
 endfunction
 call <SID>LoadGUIColorSchemeWombat()
-"call <SID>LoadGUIColorSchemeSolarized()
+"call <SID>LoadGUIColorSchemeSolarizedDark()
 
 if s:on_windows
 	set guifont=Consolas:h11:cANSI
