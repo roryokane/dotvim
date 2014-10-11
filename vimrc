@@ -727,6 +727,14 @@ augroup END
 " The auto-closing does not happen in other filetypes, so whatever plugin it
 "  is is tailored specifically for HTML and XML. It is just loading one of its
 "  features wrong so that it is only activated when loading XML.
+" See also :help 'runtimepath'
+" Actually, even if I disable the single other plugin with a `filetypes/xml.vim`
+"  or whatever, the problem still happens.
+" I am debugging events using global variables g:ran_html_vim and g:ran_xml_vim,
+"  inspecting their values when I just load HTML, just load XML, and load
+"  XML followed by HTML.
+" Look up Vim’s rules for loading ftplugin files
+" look for related problems in https://github.com/sukima/xmledit/issues
 " If I can’t get xmledit to work, I could use
 "  https://github.com/docunext/closetag.vim. But I’m not sure if that’s a
 "  better idea than just switching to XML mode when necessary.
