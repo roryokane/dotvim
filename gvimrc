@@ -38,8 +38,8 @@ endfunction
 function! s:LoadGUIColorSchemeSolarizedDark()
 	call <SID>LoadGUIColorSchemeSolarized()
 endfunction
-call <SID>LoadGUIColorSchemeWombat()
-"call <SID>LoadGUIColorSchemeSolarizedDark()
+"call <SID>LoadGUIColorSchemeWombat()
+call <SID>LoadGUIColorSchemeSolarizedDark()
 
 if s:on_windows
 	set guifont=Consolas:h11:cANSI
