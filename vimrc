@@ -472,6 +472,8 @@ nnoremap <Leader>bo :browse oldfiles<CR>
 
 " toggle NERDTree easily
 nnoremap <Leader>n :NERDTreeToggle<CR>
+" Fix NERDTree when opening a directory directly
+nnoremap <Leader>fn :bdelete<CR>:NERDTreeToggle<CR>
 
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
@@ -667,12 +669,8 @@ augroup END
 
 " TODO when Vim opens a directory, keep NERDTree open after choosing a file
 "  from its listing
-" current best workaround is to open the first file in a vsplit with `s`, and
-"  then manually resize the split to a smaller size
-" another workaround is to :NERDTreeToggle after opening a directory, which
-"  opens a persistent NERDTree, and then ignore the default,
-"  automatically-opened one
-" remember that <Leader>n is currently a shortcut to :NERDTreeToggle
+" current workaround is my mapping `<Leader>fn`, which runs :bdelete
+"  followed by :NERDTreeToggle
 
 " TODO fix that pasting lines adds an extra blank line to the end
 
