@@ -542,7 +542,8 @@ command! Stc  normal! VggoG"*y<C-O>
 "  over all instances
 " function from http://stackoverflow.com/a/290723/578288 and
 "  https://code.google.com/p/lh-vim/source/browse/misc/trunk/macros/repl-visual-no-reg-overwrite.vim
-function! RestoreRegister()
+"  and also edited manually
+function! RestoreClipboardRegister()
 	if &clipboard == 'unnamed'
 		let @* = s:restore_reg
 	elseif &clipboard == 'unnamedplus'
@@ -554,7 +555,7 @@ function! RestoreRegister()
 endfunction
 function! s:Repl()
 	let s:restore_reg = @"
-	return "p@=RestoreRegister()\<cr>"
+	return "p@=RestoreClipboardRegister()\<cr>"
 endfunction
 xmap <silent> <expr> p <sid>Repl()
 
