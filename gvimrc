@@ -21,10 +21,18 @@ let s:on_unix = has('unix')
 " ---
 " Text formatting
 
-color wombat
-set background=dark
-" halve guibg value of MatchParen so MP is easier to tell apart from Cursor
-highlight MatchParen guibg=#423d37
+function! s:LoadGUIColorSchemeWombat()
+	colorscheme wombat
+	set background=dark
+	" halve guibg value of MatchParen so MP is easier to tell apart from Cursor
+	highlight MatchParen guibg=#423d37
+endfunction
+function! s:LoadGUIColorSchemeSolarized()
+	colorscheme solarized
+	set background=dark
+endfunction
+call <SID>LoadGUIColorSchemeWombat()
+"call <SID>LoadGUIColorSchemeSolarized()
 
 if s:on_windows
 	set guifont=Consolas:h11:cANSI

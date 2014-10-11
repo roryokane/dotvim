@@ -256,8 +256,16 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
-color wombat256
-set background=dark
+function! s:LoadCLIColorSchemeWombat()
+	colorscheme wombat256
+	set background=dark
+endfunction
+function! s:LoadCLIColorSchemeSolarized()
+	colorscheme solarized
+	set background=dark
+endfunction
+call <SID>LoadCLIColorSchemeWombat()
+"call <SID>LoadCLIColorSchemeSolarized()
 
 " wrap, but only in the display, not in the file
 set wrap
