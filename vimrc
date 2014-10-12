@@ -508,12 +508,16 @@ command! -nargs=* -complete=help Help  tab help <args>
 
 " reload vimrc, and gvimrc too if applicable, without restarting Vim
 " this does not clear previous settings; it assumes *vimrc files are idempotent
-function! s:ReloadVimConfig()
-	source $MYVIMRC
-	if has('gui_running')
-		source $MYGVIMRC
-	endif
-endfunction
+" I check whether the function exists first so that Vim doesn’t redefine it
+"  while it’s running, resulting in showing me an error
+if !exists("*s:ReloadVimConfig")
+	function! s:ReloadVimConfig()
+		source $MYVIMRC
+		if has('gui_running')
+			source $MYGVIMRC
+		endif
+	endfunction
+endif
 command! ReloadVimConfig  call <SID>ReloadVimConfig()
 
 " search for trailing whitespace and confirm its deletion
