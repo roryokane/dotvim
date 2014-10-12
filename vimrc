@@ -765,3 +765,26 @@ augroup END
 " If I can’t get xmledit to work, I could use
 "  https://github.com/docunext/closetag.vim. But I’m not sure if that’s a
 "  better idea than just switching to XML mode when necessary.
+
+" TODO wait for plugin 'henrik/vim-indexed-search' to actually work,
+"  then install it.
+" I tested it by commenting out everything in my vimrc except the plugin, and
+"  it still didn’t work. I guess it broke with some Vim update, and I should
+"  just wait for the developers to fix it.
+" After I install it and it works, I will need to fix it overwriting my custom
+"  / and ? mappings. I can do that with this strategy:
+"  http://stackoverflow.com/questions/12770103/overriding-a-remapping-from-a-plugin#comment17258140_12770103
+" That is, create a global variable `g:vim_indexed_search_map_forward_search`.
+" Let it default to '/' if not set. If it is set, use `execute()` and
+"  `get(g:, …)` to write the mapping with that variable contents.
+" Have a similar mapping for backwards search, too. And maybe for n, N, *, and
+"  #, to be thorough.
+" Mapping contents could be like '/\V' (my current mapping; verynomagic search),
+"  or like ':M/' (for users of the 'othree/eregex.vim' plugin)
+" Instead of waiting for the plugin to be fixed, I have other options, too:
+" http://stackoverflow.com/a/4671105/578288
+"  write code to put the search index in the status line
+" http://stackoverflow.com/a/4681402/578288
+"  have a command or mapping that prints the number of instances of the search
+" http://www.vim.org/scripts/script.php?script_id=1682
+"  see if the older, original plugin doesn’t work with newer Vim too
