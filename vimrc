@@ -266,15 +266,15 @@ function! s:LoadCLIColorSchemeSolarized()
 	let g:solarized_visibility = "normal"
 endfunction
 function! s:LoadCLIColorSchemeSolarizedLight()
-	call <SID>LoadCLIColorSchemeSolarized()
+	call s:LoadCLIColorSchemeSolarized()
 	set background=light
 endfunction
 function! s:LoadCLIColorSchemeSolarizedDark()
-	call <SID>LoadCLIColorSchemeSolarized()
+	call s:LoadCLIColorSchemeSolarized()
 	set background=dark
 endfunction
-"call <SID>LoadCLIColorSchemeWombat()
-call <SID>LoadCLIColorSchemeSolarizedDark()
+"call s:LoadCLIColorSchemeWombat()
+call s:LoadCLIColorSchemeSolarizedDark()
 
 " wrap, but only in the display, not in the file
 set wrap
