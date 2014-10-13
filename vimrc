@@ -63,6 +63,7 @@ Plugin 'xolox/vim-misc'
 " for all of Vim
 Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'godlygeek/csapprox'
 Plugin 'ScrollColors'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -264,20 +265,23 @@ set pastetoggle=<F11>
 
 " how to load various color schemes
 function! s:LoadCLIColorSchemeWombat()
-	colorscheme wombat256
 	set background=dark
+	colorscheme wombat256
 endfunction
 function! s:LoadCLIColorSchemeSolarized()
-	colorscheme solarized
 	let g:solarized_visibility = "normal"
+	" I don’t use Solarized globally in my Terminal, so approximate the colors
+	let g:solarized_termcolors = 256
+	colorscheme solarized
 endfunction
 function! s:LoadCLIColorSchemeSolarizedLight()
-	call s:LoadCLIColorSchemeSolarized()
 	set background=light
+	call s:LoadCLIColorSchemeSolarized()
 endfunction
 function! s:LoadCLIColorSchemeSolarizedDark()
-	call s:LoadCLIColorSchemeSolarized()
+	" set background *before* the call; necessary for termcolors approximation
 	set background=dark
+	call s:LoadCLIColorSchemeSolarized()
 endfunction
 "call s:LoadCLIColorSchemeWombat()
 call s:LoadCLIColorSchemeSolarizedDark()
