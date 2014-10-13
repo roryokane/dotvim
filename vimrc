@@ -293,7 +293,7 @@ set nolist
 set textwidth=0
 set wrapmargin=0
 " indent wrapped lines
-set showbreak=↪\  " comment is here to make the whitespace not be trailing
+let &showbreak = "↪\ "
 if exists("+breakindent")
 	set breakindent
 	" the default breakindentopt settings are good
