@@ -477,6 +477,7 @@ sunmap gV
 " FIXME this should skip past consecutive blank lines when called when you're
 "  already on a blank line
 " FIXME this overwrites the current search and doesn't restore it
+" FIXME this should disable 'wrapscan', only while running
 nnoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
 nnoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
 xnoremap } /\v^\s*$<CR>
