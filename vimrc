@@ -499,6 +499,15 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " Fix NERDTree when opening a directory directly
 nnoremap <Leader>fn :bdelete<CR>:NERDTreeToggle<CR>
 
+" command-line mappings
+" to go with <C-E> as an easy-to-remember Emacs-like mapping, and because
+"  I wlll probably never need to use the default behavior of <C-A>
+cnoremap <C-A> <Home>
+" delete the previous word with Option-Delete (for Mac)
+cnoremap <M-BS> <C-W>
+" or with Ctrl-Backspace (for Windows)
+cnoremap <C-BS> <C-W>
+
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
 " via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
