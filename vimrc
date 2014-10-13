@@ -57,6 +57,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 " used by snipmate, at least
 Plugin 'tomtom/tlib_vim'
+" used by xolox/vim-session
+Plugin 'xolox/vim-misc'
 
 " for all of Vim
 Plugin 'flazz/vim-colorschemes'
@@ -98,6 +100,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'roryokane/detectindent'
 Plugin 'othree/eregex.vim'
 Plugin 'dahu/bisectly'
+Plugin 'xolox/vim-session'
 
 " integration with external tools
 Plugin 'rking/ag.vim'
