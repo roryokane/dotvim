@@ -164,13 +164,16 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 set hidden
 
 " Note that not everyone likes working this way (with the hidden option).
-" Alternatives include using tabs or split windows instead of re-using the same
-" window for multiple buffers, and/or:
+" Alternatives include using tabs or split windows instead of re-using the
+" same window for multiple buffers, and/or:
 " set confirm
 " set autowriteall
 
 " Better command-line completion
 set wildmenu
+" Complete like most shells – longest substring first, then iterate through
+"  full matches
+set wildmode=longest:full,full
 
 " Show partial commands in the last line of the screen
 set showcmd
