@@ -503,6 +503,10 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " Fix NERDTree when opening a directory directly
 nnoremap <Leader>fn :bdelete<CR>:NERDTreeToggle<CR>
 
+" make <Ctrl-W> window mappings easier to type
+nnoremap <Leader>w <C-W>
+xnoremap <Leader>w <C-W>
+
 " command-line mappings
 " to go with <C-E> as an easy-to-remember Emacs-like mapping, and because
 "  I wlll probably never need to use the default behavior of <C-A>
