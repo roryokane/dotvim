@@ -666,17 +666,15 @@ augroup END
 " language indent settings: indent size and tab vs. space
 augroup indent_settings_for_filetypes
 	autocmd!
-	autocmd FileType ruby  set tabstop=2 | set shiftwidth=2
-	autocmd FileType coffee  set tabstop=2 | set shiftwidth=2
+	autocmd FileType ruby  set tabstop=2 shiftwidth=2
+	autocmd FileType coffee  set tabstop=2 shiftwidth=2
 	autocmd FileType yaml  set expandtab
 	" use spaces in Common Lisp and Clojure, but not in Scheme, where I
 	"  sometimes use sweet-expressions
 	" also disable soft tabstops in those Lisps, because their indents are
 	"  mostly for alignment, not at multiples of 'tabstop'
-	autocmd FileType lisp  set expandtab
-	autocmd FileType lisp  set softtabstop=0
-	autocmd FileType clojure  set expandtab
-	autocmd FileType clojure  set softtabstop=0
+	autocmd FileType lisp  set expandtab softtabstop=0
+	autocmd FileType clojure  set expandtab softtabstop=0
 	" ANTLR grammars normally use indents for alignment, so should use spaces
 	autocmd FileType antlr3  set expandtab
 	autocmd FileType antlr4  set expandtab
