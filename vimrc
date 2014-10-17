@@ -152,6 +152,11 @@ let g:airline#extensions#whitespace#checks = [ 'indent' ]
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
+" settings for vim-session
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+let g:session_command_aliases = 1
+
 
 "------------------------------------------------------------
 " Must have options
@@ -343,6 +348,9 @@ set shortmess+=I
 " open new split panes to right and bottom
 set splitbelow
 set splitright
+
+" don’t save options inside a session, so that sessions get vimrc updates
+set sessionoptions-=options
 
 
 "------------------------------------------------------------
