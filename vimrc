@@ -511,6 +511,9 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " Fix NERDTree when opening a directory directly
 nnoremap <Leader>fn :bdelete<CR>:NERDTreeToggle<CR>
 
+" edit vimrc
+nnoremap <Leader>ev :edit $MYVIMRC<CR>
+
 " make <Ctrl-W> window mappings easier to type
 nnoremap <Leader>w <C-W>
 xnoremap <Leader>w <C-W>
