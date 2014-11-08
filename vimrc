@@ -508,8 +508,6 @@ nnoremap <Leader>bo :browse oldfiles<CR>
 
 " toggle NERDTree easily
 nnoremap <Leader>n :NERDTreeToggle<CR>
-" Fix NERDTree when opening a directory directly
-nnoremap <Leader>fn :bdelete<CR>:NERDTreeToggle<CR>
 
 " edit vimrc
 nnoremap <Leader>ev :edit $MYVIMRC<CR>
@@ -710,6 +708,20 @@ augroup word_characters_for_filetypes
 	autocmd FileType css  setlocal iskeyword+=-
 	autocmd FileType coffee  setlocal iskeyword+=$
 	autocmd FileType lisp  setlocal iskeyword-={,},[,]
+augroup END
+
+" when Vim is started with a single directory argument,
+"  change to that directory and set up a *real* NERDTree 
+function! s:SetUpNERDTreeIfStartedWithOneDirectoryArgument()
+	if argc() == 1 && getftype(argv(0)) == 'dir'
+		bdelete " delete the automatically-opened directory browser
+		exec 'cd' fnameescape(argv(0))
+		NERDTree
+	endif
+endfunction
+augroup set_up_nerdtree_if_started_with_one_directory_argument
+	autocmd!
+	autocmd VimEnter *  call s:SetUpNERDTreeIfStartedWithOneDirectoryArgument()
 augroup END
 
 " TODO let `w` move past straight single quotes (apostrophes) in words,
