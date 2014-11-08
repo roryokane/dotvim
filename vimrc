@@ -819,3 +819,6 @@ augroup END
 "  have a command or mapping that prints the number of instances of the search
 " http://www.vim.org/scripts/script.php?script_id=1682
 "  see if the older, original plugin doesn’t work with newer Vim too
+
+" TODO fix that when indenting with >> or <<, the cursor stays at the same column –
+"  it should stay on the same character instead
