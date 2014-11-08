@@ -446,7 +446,7 @@ xnoremap ` $h
 " and make DetectIndent set that setting appropriately, by having it be a hook
 "  for the other plugin or vice versa
 " I would want to set this on be default, but have it turned off if
-" DetectIndent finds lots of empty blank lines
+"  DetectIndent finds lots of empty blank lines
 nnoremap o ox<BS>
 nnoremap O Ox<BS>
 " also keep indentation if I press Esc right after a newline in Insert mode
