@@ -70,8 +70,8 @@ Plugin 'bling/vim-airline'
 " TODO change vim-polyglot to use my old Markdown library, which was better
 "  (in more visible syntax highlighting of elements like headers and code)
 "  (in correctly recognizing the .md extension)
-Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-rooter'
