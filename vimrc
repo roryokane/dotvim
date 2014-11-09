@@ -317,6 +317,7 @@ set foldmethod=syntax
 set foldlevelstart=99
 " enable folding for XML, where it's disabled by default
 " I temporarily disable this when I have to edit large XML files
+" next time I might disable this, try installing https://github.com/Konfekt/FastFold instead
 let g:xml_syntax_folding = 1
 
 " scroll to show always show some lines and columns around the cursor
