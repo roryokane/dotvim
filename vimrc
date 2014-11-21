@@ -333,6 +333,9 @@ set sidescrolloff=15
 " https://groups.google.com/forum/?fromgroups=#!topic/vim_dev/uqQuSfvuTrc
 set autoread
 
+" persist file undo history across Vim launches
+set undofile undodir=$HOME/.vim/undofiles,$HOME/_vim/undofiles
+
 " use prettier characters to represent whitespace and long lines in list mode
 " some more-indicative but too-wide eol characters: ↩, ↲, ⬎, or ⤸
 set listchars=eol:¬,tab:▸\ ,trail:·,extends:…,precedes:…,conceal:…,nbsp:·
