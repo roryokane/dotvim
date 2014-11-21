@@ -334,9 +334,6 @@ set sidescrolloff=15
 set autoread
 
 " persist file undo history across Vim launches
-" TODO create undofiles directory if it doesn’t exist,
-"  to ease setup on new computers
-"  if that is too slow, at least throw an error if it doesn’t exist
 set undofile undodir=$HOME/.vim/undofiles,$HOME/_vim/undofiles
 
 " use prettier characters to represent whitespace and long lines in list mode
