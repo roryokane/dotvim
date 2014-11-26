@@ -648,11 +648,13 @@ cmap <f1> <esc>
 "  so that its file path in the status line becomes relative to the
 "  working directory
 augroup make_file_path_in_status_line_relative
+	autocmd!
 	autocmd BufReadPost *  cd .
 augroup END
 
 " detect indentation when opening a new file
 augroup detect_indentation_automatically
+	autocmd!
 	autocmd BufReadPost *  DetectIndent
 augroup END
 
