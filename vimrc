@@ -644,9 +644,6 @@ cmap <f1> <esc>
 "------------------------------------------------------------
 " Autocommands
 
-" TODO look up good autocommand templates so I know I'm writing them
-"  correctly, safely, and efficiently
-
 " when loading a given file into a buffer for the first time, run `cd .`
 "  so that its file path in the status line becomes relative to the
 "  working directory
