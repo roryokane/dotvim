@@ -682,6 +682,7 @@ augroup indent_settings_for_filetypes
 	autocmd!
 	autocmd FileType ruby  set tabstop=2 shiftwidth=2
 	autocmd FileType coffee  set tabstop=2 shiftwidth=2
+	autocmd FileType markdown  set expandtab tabstop=8 shiftwidth=4 softtabstop=4
 	autocmd FileType yaml  set expandtab
 	" use spaces in Common Lisp and Clojure, but not in Scheme, where I
 	"  sometimes use sweet-expressions
