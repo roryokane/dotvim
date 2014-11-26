@@ -613,6 +613,10 @@ xmap <silent> <expr> p <sid>Repl()
 
 " easy variable rename (imperfect but useful)
 " inspiration from http://stackoverflow.com/a/597932/578288
+" less-advanced, working version:
+nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
+xmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
+" in-progress commented-out version:
 " uses indentation for block, not {}, which only works in C-like languages, or
 "  b (`vib`), which doesn’t work at all with Ruby do…end blocks
 " note: `vii` depends on plugin michaeljsmith/vim-indent-object, so not using nnoremap
@@ -625,8 +629,6 @@ xmap <silent> <expr> p <sid>Repl()
 "  it finds similarly-named different symbols
 " I could add another `ii` to select the next-outer indent
 " I could define a set of macros, run them with @a, do something manual, @b for rest
-nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
-xmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
 "nmap <Leader>r "ryiwmrvii:s/\<<C-R>r\>//c<left><left><C-R>r
 "xmap <Leader>r   "rymrvii:s/\<<C-R>r\>//c<left><left><C-R>r
 
