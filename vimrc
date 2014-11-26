@@ -309,7 +309,7 @@ if exists("+breakindent")
 	"set breakindentopt=shift:1
 endif
 
-" enable matchit to have % jump between keywords such as Ruby's do and end
+" enable matchit to have % jump between keywords such as Ruby’s `do` and `end`
 runtime macros/matchit.vim
 
 " automatically create folds based on syntax
