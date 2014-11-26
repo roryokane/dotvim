@@ -39,7 +39,7 @@ function! s:LoadGUIColorSchemeSolarizedDark()
 	call s:LoadGUIColorSchemeSolarized()
 endfunction
 "call s:LoadGUIColorSchemeWombat()
-call s:LoadGUIColorSchemeSolarizedDark()
+call s:LoadGUIColorSchemeSolarizedLight()
 
 if s:on_windows
 	set guifont=Consolas:h11:cANSI

@@ -289,7 +289,7 @@ function! s:LoadCLIColorSchemeSolarizedDark()
 	call s:LoadCLIColorSchemeSolarized()
 endfunction
 "call s:LoadCLIColorSchemeWombat()
-call s:LoadCLIColorSchemeSolarizedDark()
+call s:LoadCLIColorSchemeSolarizedLight()
 
 " wrap, but only in the display, not in the file
 set wrap
