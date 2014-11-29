@@ -102,6 +102,7 @@ Plugin 'roryokane/detectindent'
 Plugin 'othree/eregex.vim'
 Plugin 'dahu/bisectly'
 Plugin 'xolox/vim-session'
+Plugin 'junegunn/vader.vim'
 
 " integration with external tools
 Plugin 'rking/ag.vim'
