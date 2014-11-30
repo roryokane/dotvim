@@ -69,7 +69,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 " TODO change vim-polyglot to use my old Markdown library, which was better
 "  (in more visible syntax highlighting of elements like headers and code)
-"  (in correctly recognizing the .md extension)
+"  (in correctly recognizing the .md extension, which I have worked around
+"  using an autocommand)
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdcommenter'
@@ -614,10 +615,10 @@ xmap <silent> <expr> p <sid>Repl()
 
 " easy variable rename (imperfect but useful)
 " inspiration from http://stackoverflow.com/a/597932/578288
-" less-advanced, working version:
-nmap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
-xmap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
-" in-progress commented-out version:
+" less-advanced, working version, with no dependencies:
+nnoremap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
+xnoremap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
+" in-progress commented-out version, with dependencies:
 " uses indentation for block, not {}, which only works in C-like languages, or
 "  b (`vib`), which doesn’t work at all with Ruby do…end blocks
 " note: `vii` depends on plugin michaeljsmith/vim-indent-object, so not using nnoremap
