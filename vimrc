@@ -67,10 +67,6 @@ Plugin 'godlygeek/csapprox'
 Plugin 'ScrollColors'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
-" TODO change vim-polyglot to use my old Markdown library, which was better
-"  (in more visible syntax highlighting of elements like headers and code)
-"  (in correctly recognizing the .md extension, which I have worked around
-"  using an autocommand)
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdcommenter'
@@ -111,6 +107,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'int3/vim-extradite'
 
 " specific to certain languages
+" TODO change vim-polyglot to use my old Markdown library, which was better
+"  (in more visible syntax highlighting of elements like headers and code)
+"  (in correctly recognizing the .md extension, which I have worked around
+"  using an autocommand)
 Plugin 'sheerun/vim-polyglot'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-endwise'
