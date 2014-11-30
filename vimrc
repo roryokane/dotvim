@@ -661,7 +661,13 @@ augroup END
 
 " TODO reload NERDTree’s file tree when switching focus back into Vim
 " what I want: if NERDTree exists: switch to its window, hit R, then switch back to original window
-" R’s “map option” is “NERDTreeMapRefreshRoot”, but I don’t know if I can use that
+" R’s “map option” is “NERDTreeMapRefreshRoot”, but that is just a variable
+"  controlling what mapping performs the command when in a NERDTree window
+"  (R by default).
+" one possibility is finding a command to switch to the NERDTree window and
+"  calling it, pressing the appropriate mapping in the
+"  `g:NERDTreeMapRefreshRoot` variable, and then moving the cursor back to the
+"  previous window.
 "autocmd FocusGained *  CustomFunctionToRefreshRoot
 
 " file extensions that neither Vim nor vim-polyglot recognize correctly
