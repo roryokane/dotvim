@@ -1,0 +1,5 @@
+" a vimrc for testing Vim without plugins
+" use with `vim -u ~/.vim/very-basic-vimrc`
+set nocompatible
+filetype plugin indent on
+syntax enable
