@@ -95,7 +95,7 @@ Plugin 'mjbrownie/swapit'
 Plugin 'tpope/vim-speeddating'
 " DetectIndent is my own fork, with more features than the abandoned original
 "  and a few improvements from the fork it’s based on
-Plugin 'roryokane/detectindent'
+Plugin 'roryokane/detectindent', {'pinned': 1}
 Plugin 'othree/eregex.vim'
 Plugin 'dahu/bisectly'
 Plugin 'xolox/vim-session'
