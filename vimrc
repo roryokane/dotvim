@@ -751,7 +751,7 @@ function! s:SetUpNERDTreeIfStartedWithOneDirectoryArgument()
 		NERDTree
 	endif
 endfunction
-augroup set_up_nerdtree_if_started_with_one_directory_argument
+augroup set_up_NERDTree_if_started_with_one_directory_argument
 	autocmd!
 	autocmd VimEnter *  call s:SetUpNERDTreeIfStartedWithOneDirectoryArgument()
 augroup END
