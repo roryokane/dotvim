@@ -111,6 +111,9 @@ Plugin 'int3/vim-extradite'
 "  (in more visible syntax highlighting of elements like headers and code)
 "  (in correctly recognizing the .md extension, which I have worked around
 "  using an autocommand)
+" FIXME vim-polyglot breaks my newly-fixed HTML indenting
+"  everything now indents fine when the plugin is disabled
+"  yet disabling vim-polyglot’s HTML indent file with `finish` doesn’t help
 Plugin 'sheerun/vim-polyglot'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-endwise'
@@ -387,7 +390,20 @@ let g:detectindent_preferred_indent = 4
 " I do not set g:detectindent_preferred_expandtab ;
 "  this indicates that I prefer noexpandtab
 
-" Note that indentation is customized per-language in the Autocommands section.
+" Note that indentation type/size settings are set per-filetype in the Autocommands section.
+
+" HTML indent script settings; `:help html-indent`:
+" indent content within *all* HTML tags, except for the g:html_indent_autotags ones
+" below list of elements transcribed from https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list
+let all_html5_elements_comma_separated = "html,head,title,base,link,meta,style,script,noscript,template,body,section,nav,article,aside,h1,h2,h3,h4,h5,h6,header,footer,address,main,p,hr,pre,blockquote,ol,ul,li,dl,dt,dd,figure,figcaption,div,a,em,strong,small,s,cite,q,dfn,abbr,data,time,code,var,samp,kbd,sub,sup,i,b,u,mark,ruby,rt,rp,bdi,bdo,span,br,wbr,ins,del,img,iframe,embed,object,param,video,audio,source,track,canvas,map,area,svg,math,table,caption,colgroup,col,tbody,thead,tfoot,tr,td,th,form,fieldset,legend,label,input,button,select,datalist,optgroup,option,textarea,keygen,output,progress,meter,details,summary,menuitem,menu"
+" inctags lists *additional* tags to be indented, not the whole list. But
+"  there is no harm in my redundancy, and it makes maintaining the list
+"  of elements easier.
+let g:html_indent_inctags = all_html5_elements_comma_separated
+" autotags overrides inctags, so I don’t have to remove these from inctags
+let g:html_indent_autotags = "html,head,body"
+let g:html_indent_script1 = 1
+let g:html_indent_style1 = 1
 
 
 "------------------------------------------------------------
