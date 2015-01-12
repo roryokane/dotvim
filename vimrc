@@ -465,15 +465,27 @@ xnoremap ` $h
 " keep indentation if I press Esc right after o or O
 " TODO make these mappings call a function that either does this or acts
 "  normally depending on a global or buffer-local variable
-"  like l:new_line_keep_indent and g:…
+"  like g:new_line_keep_indent and b:new_line_keep_indent
 " and make DetectIndent set that setting appropriately, by having it be a hook
 "  for the other plugin or vice versa
-" I would want to set this on be default, but have it turned off if
+" I would want to set this on by default, but have it turned off if
 "  DetectIndent finds lots of empty blank lines
 nnoremap o ox<BS>
 nnoremap O Ox<BS>
 " also keep indentation if I press Esc right after a newline in Insert mode
 inoremap <Esc> x<BS><Esc>
+" in-development function version
+"function! s:OpenBlankLineAndKeepIndentIfWanted()
+"	normal! o
+"	if get(g:, "new_line_keep_indent") || get(b:, "new_line_keep_indent")
+"		normal! x<BS>
+"	endif
+"	return ''
+"endfunction
+"let g:new_line_keep_indent = 1
+"nnoremap <expr> o <sid>OpenBlankLineAndKeepIndentIfWanted()
+
+" add mapping in next section from ]<Space> to o<Esc>^O
 
 " when indenting with < and >, make it easy to repeat
 xnoremap < <gv
@@ -513,6 +525,8 @@ sunmap gV
 "  already on a blank line
 " FIXME this overwrites the current search and doesn't restore it
 " FIXME this should disable 'wrapscan', only while running
+" TODO respect g:new_line_keep_indent, or whatever setting I decide on
+"  that the o mapping also uses
 nnoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
 nnoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
 xnoremap } /\v^\s*$<CR>
