@@ -863,3 +863,12 @@ augroup END
 
 " TODO fix that when indenting with >> or <<, the cursor stays at the same column –
 "  it should stay on the same character instead
+
+" FIXME for all new NERDTree tree browsers, `setlocal sidescrolloff=1`
+" this will prevent double-clicking on an entry from sometimes scrolling the
+"  list horizontally
+" I think I will have to edit or fork NERDTree to implement that; I don’t see
+"  a general way with NERDTree’s current customization possibilities, and
+"  there are too many entry points for me to do it just in my NERDTree-opening
+"  mappings and autocommands. I could wrap `:NERDTree`, but that might be too
+"  brittle – for example, is that called by `:NERDTreeToggle`?
