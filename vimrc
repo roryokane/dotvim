@@ -280,6 +280,7 @@ function! s:LoadCLIColorSchemeWombat()
 endfunction
 function! s:LoadCLIColorSchemeSolarized()
 	let g:solarized_visibility = "normal"
+	let g:solarized_menu = 0
 	" I don’t use Solarized globally in my Terminal, so approximate the colors
 	let g:solarized_termcolors = 256
 	colorscheme solarized
