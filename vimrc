@@ -745,16 +745,16 @@ augroup END
 
 " when Vim is started with a single directory argument,
 "  change to that directory and set up a *real* NERDTree 
-function! s:SetUpNERDTreeIfStartedWithOneDirectoryArgument()
+function! s:SetUpNERDTreeIfVimStartedWithOneDirectoryArgument()
 	if argc() == 1 && getftype(argv(0)) == 'dir'
 		bdelete " delete the automatically-opened directory browser
 		exec 'cd' fnameescape(argv(0))
 		NERDTree
 	endif
 endfunction
-augroup set_up_NERDTree_if_started_with_one_directory_argument
+augroup set_up_NERDTree_if_Vim_started_with_one_directory_argument
 	autocmd!
-	autocmd VimEnter *  call s:SetUpNERDTreeIfStartedWithOneDirectoryArgument()
+	autocmd VimEnter *  call s:SetUpNERDTreeIfVimStartedWithOneDirectoryArgument()
 augroup END
 
 " TODO let `w` move past straight single quotes (apostrophes) in words,
@@ -772,13 +772,6 @@ augroup END
 " TODO way to reindent tabs <-> spaces, change number of spaces
 
 " TODO way to toggle between blank lines being empty or indented
-
-" TODO when Vim opens a directory, keep NERDTree open after choosing a file
-"  from its listing
-" current workaround is my mapping `<Leader>fn`, which runs :bdelete
-"  followed by :NERDTreeToggle
-" but this workaround fails when the current directory is not the
-"  opened directory
 
 " TODO fix that pasting lines adds an extra blank line to the end
 
