@@ -359,8 +359,21 @@ set shortmess+=I
 set splitbelow
 set splitright
 
-" don’t save options inside a session, so that sessions get vimrc updates
+" don’t save (global) options inside a session, so that sessions get vimrc updates
 set sessionoptions-=options
+" do save local options, such 'modifiable' for helpfiles
+" FIXME helpfiles are still wrongly loaded as modifiable
+"  What other options do I need to change?
+"  Or is :SaveSession changing sessionoptions compared to :mksession?
+"  It may have to do with the following from the session plugin’s session.txt:
+"      Note that the vim-session plug-in automatically and unconditionally executes
+"      the following change just before saving a session:
+"      
+"        " Don't persist options and mappings because it can corrupt sessions.
+"        set sessionoptions-=options
+"  Test whether -=options removes localoptions if options was already removed
+"  No, -=options doesn’t remove localoptions; that’s not the problem
+set sessionoptions+=localoptions
 
 
 "------------------------------------------------------------
