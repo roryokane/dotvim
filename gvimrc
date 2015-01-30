@@ -34,9 +34,13 @@ function! s:LoadGUIColorSchemeSolarized()
 endfunction
 function! s:LoadGUIColorSchemeSolarizedLight()
 	call s:LoadGUIColorSchemeSolarized()
+	" make MatchParen less confusable with Cursor by blending its guibg 50% with Normal guibg
+	highlight MatchParen guibg=#c8cbc2
 endfunction
 function! s:LoadGUIColorSchemeSolarizedDark()
 	call s:LoadGUIColorSchemeSolarized()
+	" make MatchParen less confusable with Cursor by blending its guibg 50% with Normal guibg
+	highlight MatchParen guibg=#2c4c55
 endfunction
 "call s:LoadGUIColorSchemeWombat()
 call s:LoadGUIColorSchemeSolarizedLight()
