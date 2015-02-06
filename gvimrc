@@ -36,11 +36,17 @@ function! s:LoadGUIColorSchemeSolarizedLight()
 	call s:LoadGUIColorSchemeSolarized()
 	" make MatchParen less confusable with Cursor by blending its guibg 50% with Normal guibg
 	highlight MatchParen guibg=#c8cbc2
+	" add highlighting for Noise highlight group, used in JS and CSS highlighters
+	" highlight as base00, one step less contrasty than text
+	highlight Noise guifg=#839496
 endfunction
 function! s:LoadGUIColorSchemeSolarizedDark()
 	call s:LoadGUIColorSchemeSolarized()
 	" make MatchParen less confusable with Cursor by blending its guibg 50% with Normal guibg
 	highlight MatchParen guibg=#2c4c55
+	" add highlighting for Noise highlight group, used in JS and CSS highlighters
+	" highlight as base00, one step less contrasty than text
+	highlight Noise guifg=#657b83
 endfunction
 "call s:LoadGUIColorSchemeWombat()
 call s:LoadGUIColorSchemeSolarizedLight()
