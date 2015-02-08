@@ -162,6 +162,17 @@ let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 let g:session_command_aliases = 1
 
+" settings for vim-surround
+" add custom surroundings: ‘’ “”
+" FIXME this doesn’t let me create or delete these surroundings;
+"  only add them
+" look at vim-surround’s GitHub issues to see if this has been
+"  reported already
+let g:surround_8216 = "‘\r’"
+let g:surround_8217 = "‘\r’"
+let g:surround_8220 = "“\r”"
+let g:surround_8221 = "“\r”"
+
 
 "------------------------------------------------------------
 " Must have options
