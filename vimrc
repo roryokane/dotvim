@@ -173,6 +173,8 @@ let g:surround_8217 = "‘\r’"
 let g:surround_8220 = "“\r”"
 let g:surround_8221 = "“\r”"
 
+let g:bufExplorerShowNoName=1
+
 
 "------------------------------------------------------------
 " Must have options
