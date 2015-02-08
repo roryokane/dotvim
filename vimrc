@@ -702,7 +702,8 @@ xnoremap <Leader>r "rymr:%s/<C-R>r//c<left><left><C-R>r
 
 " Remap <f1> to <esc> in every mode to accommodate fat-fingering
 nmap <f1> <esc>
-vmap <f1> <esc>
+xmap <f1> <esc>
+smap <f1> <esc>
 omap <f1> <esc>
 imap <f1> <esc>
 lmap <f1> <esc>
