@@ -681,8 +681,9 @@ xmap <silent> <expr> p <sid>Repl()
 " easy variable rename (imperfect but useful)
 " inspiration from http://stackoverflow.com/a/597932/578288
 " less-advanced, working version, with no dependencies:
-nnoremap <Leader>r "ryiwmr:%s/\<<C-R>r\>//c<left><left><C-R>r
-xnoremap <Leader>r   "rymr:%s/<C-R>r//c<left><left><C-R>r
+nnoremap ° :Ag '<C-R>=expand("<cword>")<CR>'<CR>
+nnoremap <Leader>r    mr:%s/\<<C-R>=expand("<cword>")<CR>\>//c<left><left><C-R>=expand("<cword>")<CR>
+xnoremap <Leader>r "rymr:%s/<C-R>r//c<left><left><C-R>r
 " in-progress commented-out version, with dependencies:
 " uses indentation for block, not {}, which only works in C-like languages, or
 "  b (`vib`), which doesn’t work at all with Ruby do…end blocks
