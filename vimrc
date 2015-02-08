@@ -77,7 +77,7 @@ Plugin 'airblade/vim-rooter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'sjl/gundo.vim'
@@ -597,6 +597,9 @@ nnoremap <Leader>/ :Ag ''<Left>
 " (° is <A-*> on Mac; neither <A-*> nor <S-A-8> work for some reason)
 nnoremap °    :Ag '<C-R>=expand("<cword>")<CR>'<CR>
 xnoremap ° "sy:Ag '<C-R>s'<CR>
+
+" start interactive EasyAlign from visual mode (e.g. after `vip`)
+xmap + <Plug>(EasyAlign)
 
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
