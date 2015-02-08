@@ -590,6 +590,14 @@ cnoremap <M-BS> <C-W>
 " or with Ctrl-Backspace (for Windows)
 cnoremap <C-BS> <C-W>
 
+" search the whole project easily
+nnoremap <Leader>/ :Ag ''<Left>
+
+" search for the current word or selection in the whole project
+" (° is <A-*> on Mac; neither <A-*> nor <S-A-8> work for some reason)
+nnoremap °    :Ag '<C-R>=expand("<cword>")<CR>'<CR>
+xnoremap ° "sy:Ag '<C-R>s'<CR>
+
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
 " via http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file
