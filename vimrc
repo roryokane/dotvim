@@ -910,3 +910,11 @@ augroup END
 "  there are too many entry points for me to do it just in my NERDTree-opening
 "  mappings and autocommands. I could wrap `:NERDTree`, but that might be too
 "  brittle – for example, is that called by `:NERDTreeToggle`?
+
+" TODO set 'foldtext' so that folds look just like the first and last lines
+"  surrounding text about the number of lines folded, including the same
+"  starting indentation
+" for example, when folding some code “\t\tfunction() {\n\t\t\treturn 2 + 2;\n\t\t}”,
+"  the fold text should be “\t\tfunction() {  (1 line)  }”
+" in an autocommand for specific languages, such as Python and Lisps, I will
+"  override 'foldtext' to not show the last line in the preview
