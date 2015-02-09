@@ -58,7 +58,7 @@ if s:on_windows
 	" below font has more Unicode characters on Windows, but uglier otherwise
 	"set guifont=DejaVu_Sans_Mono:h10
 else
-	set guifont=Consolas:h14
+	set guifont=Consolas:h16
 	" looks good in MacVim on Mac OS X
 endif
 
