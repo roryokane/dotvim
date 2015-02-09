@@ -595,7 +595,7 @@ nnoremap <Leader>/ :Ag ''<Left>
 
 " search for the current word or selection in the whole project
 " (° is <A-*> on Mac; neither <A-*> nor <S-A-8> work for some reason)
-nnoremap °    :Ag '<C-R>=expand("<cword>")<CR>'<CR>
+nnoremap °    :Ag '\b<C-R>=expand("<cword>")<CR>\b'<CR>
 xnoremap ° "sy:Ag '<C-R>s'<CR>
 
 " start interactive EasyAlign from visual mode (e.g. after `vip`)
