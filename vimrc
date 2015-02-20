@@ -59,6 +59,8 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 " used by xolox/vim-session
 Plugin 'xolox/vim-misc'
+" used by my own vimrc
+Plugin 'kana/vim-textobj-user'
 
 " for all of Vim
 Plugin 'flazz/vim-colorschemes'
@@ -600,6 +602,30 @@ xnoremap ° "sy:Ag '<C-R>s'<CR>
 
 " start interactive EasyAlign from visual mode (e.g. after `vip`)
 xmap + <Plug>(EasyAlign)
+
+" text objects to select “…” and ‘…’ – text in smart quotes
+" I use [^”]* instead of .* or .\{-} to match the minimum possible
+" for select i, I use lookbehind and lookahead to match within quotes
+" for select a, I treat trailing and leading whitespace the same as |v_aquote|,
+"  using negative lookahead to properly prioritize trailing whitespace
+call textobj#user#plugin('smartquotes', {
+\   'i“”': {
+\     'pattern': '\(“\)\@<=[^”]*\(”\)\@=',
+\     'select': ['i“', 'i”'],
+\   },
+\   'i‘’': {
+\     'pattern': '\(‘\)\@<=[^’]*\(’\)\@=',
+\     'select': ['i‘', 'i’'],
+\   },
+\   'a“”': {
+\     'pattern': '“[^”]*”\s\+\|\s*“[^”]*”\(\s\)\@!',
+\     'select': ['a“', 'a”'],
+\   },
+\   'a‘’': {
+\     'pattern': '‘[^’]*’\s\+\|\s*‘[^’]*’\(\s\)\@!',
+\     'select': ['a‘', 'a’'],
+\   },
+\ })
 
 " CDC = Change to Directory of Current file
 " CDCP = Change to Directory of Current file's Parent
