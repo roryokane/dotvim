@@ -57,7 +57,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 " used by snipmate, at least
 Plugin 'tomtom/tlib_vim'
-" used by xolox/vim-session
+" used by xolox/vim-session, xolox/vim-easytags
 Plugin 'xolox/vim-misc'
 " used by my own vimrc
 Plugin 'kana/vim-textobj-user'
@@ -105,6 +105,7 @@ Plugin 'junegunn/vader.vim'
 
 " integration with external tools
 Plugin 'rking/ag.vim'
+Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-fugitive'
 Plugin 'int3/vim-extradite'
 
