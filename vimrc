@@ -178,6 +178,29 @@ let g:surround_8221 = "“\r”"
 
 let g:bufExplorerShowNoName=1
 
+" RainbowParens colors
+" the colors must contrast from Lisp code highlighted with my color scheme,
+"  and be of similar brightnesses
+" compared to default, the unusually-light SeaGreen3 is changed to a dark yellow
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    '#b07000'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'FireBrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     '#b07000'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'FireBrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       '#b07000'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'FireBrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    '#b07000'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'FireBrick3'],
+    \ ]
+
 
 "------------------------------------------------------------
 " Must have options
