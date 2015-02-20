@@ -632,6 +632,13 @@ xmap + <Plug>(EasyAlign)
 " for select i, I use lookbehind and lookahead to match within quotes
 " for select a, I treat trailing and leading whitespace the same as |v_aquote|,
 "  using negative lookahead to properly prioritize trailing whitespace
+" cases not handled:
+" • nested same-type quotes (too rare)
+" • distinguishing apostrophes from closing single quotes
+"   (too complex; would require a database of apostrophized English words)
+" • selecting inner when on a closing quote
+"   (would require reimplementing 'pattern' with 'select-function', because
+"   the textobj-user plugin does not implement this automatically)
 call textobj#user#plugin('smartquotes', {
 \   'i“”': {
 \     'pattern': '\(“\)\@<=[^”]*\(”\)\@=',
