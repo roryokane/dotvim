@@ -201,6 +201,8 @@ let g:rbpt_colorpairs = [
     \ ['red',         'FireBrick3'],
     \ ]
 
+let g:tagbar_sort = 0
+
 
 "------------------------------------------------------------
 " Must have options
