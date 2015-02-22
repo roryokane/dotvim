@@ -991,3 +991,9 @@ augroup END
 "  the fold text should be “\t\tfunction() {  (1 line)  }”
 " in an autocommand for specific languages, such as Python and Lisps, I will
 "  override 'foldtext' to not show the last line in the preview
+
+" TODO switch from Vundle to NeoBundle so I can use its 'depends' feature and
+"  stop manually tracking dependencies
+" (https://github.com/Shougo/neobundle.vim/blob/dab02f0513dc7f8832cb7c191d43b84982ef34cb/doc/neobundle.txt#L810)
+" settings up 'depends' would take a while, because I would have to read the
+"  installation instructions in the README of every existing plugin
