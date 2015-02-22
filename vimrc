@@ -743,7 +743,6 @@ xmap <silent> <expr> p <sid>Repl()
 " easy variable rename (imperfect but useful)
 " inspiration from http://stackoverflow.com/a/597932/578288
 " less-advanced, working version, with no dependencies:
-nnoremap ° :Ag '<C-R>=expand("<cword>")<CR>'<CR>
 nnoremap <Leader>r    mr:%s/\V\<<C-R>=expand("<cword>")<CR>\>//c<left><left><C-R>=expand("<cword>")<CR>
 xnoremap <Leader>r "rymr:%s/\V<C-R>r//c<left><left><C-R>r
 " in-progress commented-out version, with dependencies:
