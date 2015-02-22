@@ -85,7 +85,6 @@ Plugin 'ervandew/supertab'
 Plugin 'sjl/gundo.vim'
 Plugin 'greplace.vim'
 Plugin 'bufkill.vim'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tpope/vim-abolish'
 " disabling YankRing until I fix it overriding my Y mapping
 " yrrecord in YankRing was overriding my `noremap Y y$`
@@ -103,6 +102,7 @@ Plugin 'dahu/bisectly'
 Plugin 'xolox/vim-session'
 Plugin 'junegunn/vader.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Shougo/unite.vim'
 
 " integration with external tools
 Plugin 'rking/ag.vim'
@@ -176,8 +176,6 @@ let g:surround_8216 = "‘\r’"
 let g:surround_8217 = "‘\r’"
 let g:surround_8220 = "“\r”"
 let g:surround_8221 = "“\r”"
-
-let g:bufExplorerShowNoName=1
 
 " RainbowParens colors
 " the colors must contrast from Lisp code highlighted with my color scheme,
@@ -629,6 +627,9 @@ xnoremap ° "sy:Ag '<C-R>s'<CR>
 
 " start interactive EasyAlign from visual mode (e.g. after `vip`)
 xmap + <Plug>(EasyAlign)
+
+" mappings for the Unite plugin
+nnoremap <leader>be :Unite -no-split -buffer-name=buffer buffer<CR>
 
 " text objects to select “…” and ‘…’ – text in smart quotes
 " I use [^”]* instead of .* or .\{-} to match the minimum possible
