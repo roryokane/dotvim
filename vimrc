@@ -202,6 +202,11 @@ let g:rbpt_colorpairs = [
 
 let g:tagbar_sort = 0
 
+" Unite
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" mappings for Unite are in the Mappings section,
+"  so they can use its <Leader> value
+
 
 "------------------------------------------------------------
 " Must have options
