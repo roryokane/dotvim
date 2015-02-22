@@ -102,6 +102,7 @@ Plugin 'othree/eregex.vim'
 Plugin 'dahu/bisectly'
 Plugin 'xolox/vim-session'
 Plugin 'junegunn/vader.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " integration with external tools
 Plugin 'rking/ag.vim'
