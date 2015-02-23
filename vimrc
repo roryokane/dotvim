@@ -209,6 +209,11 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 " mappings for Unite are in the Mappings section,
 "  so they can use its <Leader> value
 
+" fix bad vim-multiple-cursors defaults
+let g:multi_cursor_normal_maps = {'!':1, '@':1, '=':1, 'q':1, 'r':1, 't':1, 'T':1, 'y':1, '[':1, ']':1, '\':1, 'd':1, 'f':1, 'F':1, 'g':1, '"':1, 'z':1, 'c':1, 'm':1, '<':1, '>':1}
+" add my own customizations
+let g:multi_cursor_normal_maps[' '] = 1
+
 
 "------------------------------------------------------------
 " Must have options
