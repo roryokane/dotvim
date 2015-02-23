@@ -644,6 +644,9 @@ xmap + <Plug>(EasyAlign)
 nnoremap <leader>be :Unite -no-split -buffer-name=buffer buffer<CR>
 nnoremap <leader>y  :Unite -buffer-name=yank history/yank<cr>
 
+" browse Most-Recently Updated files with the Ctrl-P plugin
+nnoremap <leader>mru :CtrlPMRUFiles<CR>
+
 " text objects to select “…” and ‘…’ – text in smart quotes
 " I use [^”]* instead of .* or .\{-} to match the minimum possible
 " for select i, I use lookbehind and lookahead to match within quotes
