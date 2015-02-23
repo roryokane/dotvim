@@ -203,6 +203,7 @@ let g:rbpt_colorpairs = [
 let g:tagbar_sort = 0
 
 " Unite
+let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 " mappings for Unite are in the Mappings section,
 "  so they can use its <Leader> value
@@ -635,6 +636,7 @@ xmap + <Plug>(EasyAlign)
 
 " mappings for the Unite plugin
 nnoremap <leader>be :Unite -no-split -buffer-name=buffer buffer<CR>
+nnoremap <leader>y  :Unite -buffer-name=yank history/yank<cr>
 
 " text objects to select “…” and ‘…’ – text in smart quotes
 " I use [^”]* instead of .* or .\{-} to match the minimum possible
