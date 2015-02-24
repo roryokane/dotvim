@@ -723,12 +723,18 @@ function! s:TrailingWhitespaceDelete(line1,line2)
 endfunction
 command! -range=% TrailingWhitespaceDelete  call <SID>TrailingWhitespaceDelete(<line1>,<line2>)
 
-" commands to edit the clipboard in a buffer
-" useful for Vim for Windows, which doesn't have the Command key for Cmd-A and Cmd-V
+" commands and mappings to transfer between a buffer and the system clipboard
+" better than MacVim's Cmd-A, Cmd-C, and Cmd-V in that they preserve cursor position
+" commands:
 " Load From Clipboard into buffer
 command! Lfc  normal! ggVG"*pgg0
 " Save buffer To Clipboard - copy buffer into clipboard, preserving cursor position
 command! Stc  normal! VggoG"*y<C-O>
+" mappings:
+" pasteboard (is source of) paste
+nnoremap <Leader>pp ggVG"*pgg0
+" pasteboard (is destination of) yank
+nnoremap <Leader>py VggoG"*y<C-O>
 
 
 "------------------------------------------------------------
