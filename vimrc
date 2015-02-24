@@ -895,8 +895,6 @@ augroup END
 " Todo list
 
 " TODO fix that autoquoting in Insert mode breaks . repetition
-" TODO fix repeat.vim not allowing me to repeat NERDCommenter commands
-"  (e.g. ,c<Space>) as I think it’s supposed to
 
 " TODO way to reindent tabs <-> spaces, change number of spaces
 
