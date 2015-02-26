@@ -82,7 +82,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
-Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 Plugin 'greplace.vim'
 Plugin 'bufkill.vim'
 Plugin 'tpope/vim-abolish'
@@ -213,6 +213,9 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 let g:multi_cursor_normal_maps = {'!':1, '@':1, '=':1, 'q':1, 'r':1, 't':1, 'T':1, 'y':1, '[':1, ']':1, '\':1, 'd':1, 'f':1, 'F':1, 'g':1, '"':1, 'z':1, 'c':1, 'm':1, '<':1, '>':1}
 " add my own customizations
 let g:multi_cursor_normal_maps[' '] = 1
+
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_TreeNodeShape = '○'
 
 
 "------------------------------------------------------------
