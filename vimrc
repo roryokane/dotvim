@@ -595,6 +595,7 @@ sunmap gV
 " FIXME this should disable 'wrapscan', only while running
 " TODO respect g:new_line_keep_indent, or whatever setting I decide on
 "  that the o mapping also uses
+" TODO make indentation (=, >, >>, etc.) also respect g:new_line_keep_indent
 nnoremap } /\v^\s*$<CR>:nohl<Bar>:echo<CR>
 nnoremap { ?\v^\s*$<CR>:nohl<Bar>:echo<CR>
 xnoremap } /\v^\s*$<CR>
