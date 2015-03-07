@@ -86,9 +86,6 @@ Plugin 'mbbill/undotree'
 Plugin 'greplace.vim'
 Plugin 'bufkill.vim'
 Plugin 'tpope/vim-abolish'
-" disabling YankRing until I fix it overriding my Y mapping
-" yrrecord in YankRing was overriding my `noremap Y y$`
-"Plugin 'YankRing.vim'
 " delimitMate is an untried alternative to the below AutoClose--Alves
 Plugin 'AutoClose--Alves'
 " I can't get swapit to work; try some more
@@ -146,8 +143,6 @@ filetype plugin indent on
 " Plugin settings
 " (Not all plugin settings go here. Settings closely related to other
 " functionality in this vimrc are near that specific place.)
-
-let g:yankring_history_dir = '$HOME/.vim'
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
