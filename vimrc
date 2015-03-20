@@ -131,6 +131,7 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
+Plugin 'dag/vim-fish'
 
 
 " Attempt to determine the type of a file based on its name and possibly its
