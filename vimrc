@@ -645,7 +645,7 @@ nnoremap <Leader>be :Unite -no-split -buffer-name=buffer buffer<CR>
 nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<cr>
 
 " browse Most-Recently Updated files with the Ctrl-P plugin
-nnoremap <Leader>mru :CtrlPMRUFiles<CR>
+nnoremap <Leader>mr :CtrlPMRUFiles<CR>
 
 " text objects to select “…” and ‘…’ – text in smart quotes
 " I use [^”]* instead of .* or .\{-} to match the minimum possible
