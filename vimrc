@@ -293,6 +293,10 @@ set autoindent
 " coming from other editors would expect.
 set nostartofline
 
+" Allow positioning the cursor past the end of the line in visual block mode.
+" Makes selecting columns easier if the first row isn’t the longest row.
+set virtualedit=block
+
 " Display the cursor position on the last line of the screen or in the status
 " line of a window
 set ruler
