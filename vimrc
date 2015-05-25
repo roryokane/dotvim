@@ -835,6 +835,7 @@ augroup filetypes_for_file_extensions
 	autocmd BufNewFile,BufRead *.wisp  setfiletype lisp
 	autocmd BufNewFile,BufRead *.jisp  setfiletype lisp
 	autocmd BufNewFile,BufRead *.sweet-clj  setfiletype clojure
+	autocmd BufNewFile,BufRead *.js.es6  setfiletype javascript
 	" don’t interpret .dat as CSV; it often isn’t
 	autocmd BufNewFile,BufRead *.dat  setfiletype text
 	" .md is always Markdown, never modula2 for the files I read
