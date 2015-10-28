@@ -107,6 +107,7 @@ Plugin 'rking/ag.vim'
 Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-fugitive'
 Plugin 'int3/vim-extradite'
+Plugin 'itspriddle/vim-marked'
 
 " specific to certain languages
 " TODO change vim-polyglot to use my old Markdown library, which was better
@@ -215,6 +216,8 @@ let g:multi_cursor_normal_maps[' '] = 1
 
 let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_TreeNodeShape = '○'
+
+let g:marked_app = "Marked"
 
 
 "------------------------------------------------------------
