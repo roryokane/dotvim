@@ -616,7 +616,10 @@ xnoremap <Leader>s :s/\V/<left>
 nnoremap <Leader>bo :browse oldfiles<CR>
 
 " toggle NERDTree easily
-nnoremap <Leader>n :NERDTreeToggle<CR>
+" The `set nocursorline` improves NERDTree when opening it
+" more than it hurts normal viewing when closing NERDTree.
+" I don’t know of a cleaner way to set it yet.
+nnoremap <Leader>n :NERDTreeToggle<CR>:set nocursorline<CR>
 
 " edit vimrc
 nnoremap <Leader>ev :edit $MYVIMRC<CR>
@@ -893,6 +896,8 @@ function! s:SetUpNERDTreeIfVimStartedWithOneDirectoryArgument()
 		bdelete " delete the automatically-opened directory browser
 		exec 'cd' fnameescape(argv(0))
 		NERDTree
+		" I don’t know of any other way to configure the below for NERDTree
+		set nocursorline
 	endif
 endfunction
 augroup set_up_NERDTree_if_Vim_started_with_one_directory_argument
