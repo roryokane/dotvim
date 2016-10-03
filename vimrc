@@ -135,9 +135,6 @@ Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
 Plugin 'dag/vim-fish'
 Plugin 'mxw/vim-jsx'
-" Trying the below just to see if it makes Syntastic work.
-" It’s already included in vim-polyglot.
-Plugin 'elixir-lang/vim-elixir'
 
 
 " Attempt to determine the type of a file based on its name and possibly its
