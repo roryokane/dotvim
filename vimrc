@@ -1039,3 +1039,8 @@ augroup END
 " (https://github.com/Shougo/neobundle.vim/blob/dab02f0513dc7f8832cb7c191d43b84982ef34cb/doc/neobundle.txt#L810)
 " settings up 'depends' would take a while, because I would have to read the
 "  installation instructions in the README of every existing plugin
+
+" TODO try the gruvbox color scheme (https://github.com/morhetz/gruvbox),
+"  which has light/dark modes with the same colors like solarized, and which
+"  uses many hues, but which uses a dark grey background for dark mode
+"  instead of solarized's dark blue one that clashes with green text
