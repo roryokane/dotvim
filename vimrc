@@ -134,6 +134,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
 Plugin 'dag/vim-fish'
+Plugin 'mxw/vim-jsx'
 
 
 " Attempt to determine the type of a file based on its name and possibly its
@@ -218,6 +219,9 @@ let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_TreeNodeShape = '○'
 
 let g:marked_app = "Marked"
+
+" vim-jsx
+"let g:jsx_ext_required = 0
 
 
 "------------------------------------------------------------
