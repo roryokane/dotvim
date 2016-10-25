@@ -202,6 +202,10 @@ let g:rbpt_colorpairs = [
 
 let g:tagbar_sort = 0
 
+" disable easytags becasue it makes saving buffers too slow
+" I will re-enable it after it implements async in a Vim-8-compatible way
+let g:easytags_events = []
+
 " Unite
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
