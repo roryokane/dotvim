@@ -85,6 +85,8 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'mbbill/undotree'
+" TODO consider replacing greplace with 'thinca/vim-qfreplace'.
+" It’s similar but works with any quickfix data.
 Plugin 'greplace.vim'
 Plugin 'bufkill.vim'
 Plugin 'tpope/vim-abolish'
