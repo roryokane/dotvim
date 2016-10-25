@@ -593,6 +593,12 @@ xnoremap ? ?\V
 "  Use the plugin manually with :M/ and :M? (and :S to substitute).
 let g:eregex_default_enable=0
 
+" make v_* and v_# search for the selected text
+" based on my Stack Overflow answer http://stackoverflow.com/a/40055926/578288
+" TODO replace with more-robust plugin https://github.com/thinca/vim-visualstar
+xnoremap * y/\V<C-R>"<CR>
+xnoremap # y?\V<C-R>"<CR>
+
 " move to end of pasted text, to ease multiple pastes
 xnoremap y y`]
 xnoremap p p`]
