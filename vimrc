@@ -687,7 +687,7 @@ nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<CR>
 "\  '--hidden', '-g', '']
 "Plugin 'Shougo/vimproc.vim' " would need manual building
 
-" browse Most-Recently Updated files with the Ctrl-P plugin
+" browse Most-Recently Updated files with the CtrlP plugin
 nnoremap <Leader>mr :CtrlPMRUFiles<CR>
 
 " for surround.vim, use x_s to surround, preferring it over x_S
