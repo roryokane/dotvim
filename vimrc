@@ -139,7 +139,11 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-fireplace'
 Plugin 'dag/vim-fish'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
+" The above plugin breaks indenting in JavaScript because it clashes with
+" vim-polyglot’s indent/javascript.vim. I don’t know whose fault it is, but I
+" don’t need JSX right now, so I’ll leave this disabled.
+" https://github.com/mxw/vim-jsx/issues/10
 
 
 " Attempt to determine the type of a file based on its name and possibly its
@@ -162,8 +166,10 @@ let g:airline#extensions#whitespace#checks = [ 'indent' ]
 " Set 'grepprg' for the Greplace plugin. Changing this also affects the
 "  built-in :grep command and plugins that use it, but I don’t think I
 "  depend on any of those.
-set grepprg=ag
-let g:grep_cmd_opts = '--numbers --noheading'
+if executable('ag')
+	set grepprg=ag
+	let g:grep_cmd_opts = '--hidden --follow --numbers --nogroup --nocolor'
+endif
 
 " settings for vim-session
 let g:session_autosave = 'no'
@@ -215,6 +221,15 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 " mappings for Unite are in the Mappings section,
 "  so they can use that section’s <Leader> value
+
+" CtrlP
+if executable('ag')
+	" use Ag for listing files in CtrlP –
+	" Ag has better fuzzy matching and it understands ignore files
+	let g:ctrlp_user_command = 'ag --files-with-matches --hidden --follow --nogroup --nocolor -g "" %s'
+	" Ag is fast enough that CtrlP doesn’t need to cache
+	let g:ctrlp_use_caching = 0
+endif
 
 " vim-multiple-cursors
 " first, initialize the setting to the default, so it
@@ -682,9 +697,7 @@ nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<CR>
 "nnoremap <Leader>pf :Unite -buffer-name=project_files -no-split -start-insert file_rec<CR>
 " file_rec/async version:
 "nnoremap <Leader>pf :Unite -buffer-name=project_files -no-split -start-insert file_rec/async<CR>
-"let g:unite_source_rec_async_command =
-"\ ['ag', '--follow', '--nocolor', '--nogroup',
-"\  '--hidden', '-g', '']
+"let g:unite_source_rec_async_command = ['ag', '--files-with-matches', '--hidden', '--follow', '--nogroup', '--nocolor', '-g', '']
 "Plugin 'Shougo/vimproc.vim' " would need manual building
 
 " browse Most-Recently Updated files with the CtrlP plugin
