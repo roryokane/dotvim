@@ -163,7 +163,7 @@ let g:airline#extensions#whitespace#checks = [ 'indent' ]
 "  built-in :grep command and plugins that use it, but I don’t think I
 "  depend on any of those.
 set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
+let g:grep_cmd_opts = '--numbers --noheading'
 
 " settings for vim-session
 let g:session_autosave = 'no'
