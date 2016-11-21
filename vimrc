@@ -678,6 +678,10 @@ nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<CR>
 " browse Most-Recently Updated files with the Ctrl-P plugin
 nnoremap <Leader>mr :CtrlPMRUFiles<CR>
 
+" for surround.vim, use x_s to surround, preferring it over x_S
+" (x_c (<v_c>) does the same as what x_s (<v_s>) used to do)
+xmap s <Plug>VSurround
+
 " text objects to select “…” and ‘…’ – text in smart quotes
 " I use [^”]* instead of .* or .\{-} to match the minimum possible
 " for select i, I use lookbehind and lookahead to match within quotes
