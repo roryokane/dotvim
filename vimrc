@@ -90,7 +90,7 @@ Plugin 'mbbill/undotree'
 " TODO consider replacing greplace with 'thinca/vim-qfreplace'.
 " It’s similar but works with any quickfix data.
 Plugin 'greplace.vim'
-Plugin 'bufkill.vim'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'tpope/vim-abolish'
 " delimitMate is an untried alternative to the below AutoClose--Alves
 Plugin 'AutoClose--Alves'
