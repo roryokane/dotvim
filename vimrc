@@ -674,6 +674,18 @@ xmap + <Plug>(EasyAlign)
 " mappings for the Unite plugin
 nnoremap <Leader>bb :Unite -buffer-name=buffer -no-split buffer<CR>
 nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<CR>
+" disable searching for project files with Unite because
+"  the file_rec source doesn’t support gitignore and is very slow, while
+"  the file_rec/async source depends on a plugin that must be built after
+"  it is installed, and Vundle can’t run build commands automatically
+" file_rec version:
+"nnoremap <Leader>pf :Unite -buffer-name=project_files -no-split -start-insert file_rec<CR>
+" file_rec/async version:
+"nnoremap <Leader>pf :Unite -buffer-name=project_files -no-split -start-insert file_rec/async<CR>
+"let g:unite_source_rec_async_command =
+"\ ['ag', '--follow', '--nocolor', '--nogroup',
+"\  '--hidden', '-g', '']
+"Plugin 'Shougo/vimproc.vim' " would need manual building
 
 " browse Most-Recently Updated files with the Ctrl-P plugin
 nnoremap <Leader>mr :CtrlPMRUFiles<CR>
