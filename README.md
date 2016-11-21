@@ -8,11 +8,11 @@ My `.vim` directory; configuration for the [Vim text editor](http://en.wikipedia
 
 #### On Mac/Linux:
 
-	git clone git://github.com/roryokane/dotvim.git ~/.vim
+	git clone https://github.com/roryokane/dotvim.git ~/.vim
 
 #### On Windows:
 
-	git clone git://github.com/roryokane/dotvim.git %USERPROFILE%\.vim
+	git clone https://github.com/roryokane/dotvim.git %USERPROFILE%\.vim
 
 ### Create symlinks
 
