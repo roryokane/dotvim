@@ -61,6 +61,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'xolox/vim-misc'
 " used by my own vimrc
 Plugin 'kana/vim-textobj-user'
+" used by Shougo/neoyank.vim
+Plugin 'Shougo/unite.vim'
 
 " for all of Vim
 Plugin 'flazz/vim-colorschemes'
@@ -103,7 +105,7 @@ Plugin 'dahu/bisectly'
 Plugin 'xolox/vim-session'
 Plugin 'junegunn/vader.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neoyank.vim'
 
 " integration with external tools
 Plugin 'rking/ag.vim'
@@ -209,11 +211,10 @@ let g:tagbar_sort = 0
 let g:easytags_events = []
 
 " Unite
-let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 " mappings for Unite are in the Mappings section,
-"  so they can use its <Leader> value
+"  so they can use that section’s <Leader> value
 
 " vim-multiple-cursors
 " first, initialize the setting to the default, so it
@@ -672,7 +673,7 @@ xmap + <Plug>(EasyAlign)
 
 " mappings for the Unite plugin
 nnoremap <Leader>be :Unite -no-split -buffer-name=buffer buffer<CR>
-nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<cr>
+nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<CR>
 
 " browse Most-Recently Updated files with the Ctrl-P plugin
 nnoremap <Leader>mr :CtrlPMRUFiles<CR>
