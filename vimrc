@@ -672,7 +672,7 @@ xnoremap ° "sy:Ag '<C-R>s'<CR>
 xmap + <Plug>(EasyAlign)
 
 " mappings for the Unite plugin
-nnoremap <Leader>be :Unite -no-split -buffer-name=buffer buffer<CR>
+nnoremap <Leader>bb :Unite -buffer-name=buffer -no-split buffer<CR>
 nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<CR>
 
 " browse Most-Recently Updated files with the Ctrl-P plugin
