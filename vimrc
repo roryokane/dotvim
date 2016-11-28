@@ -167,8 +167,12 @@ let g:airline#extensions#whitespace#checks = [ 'indent' ]
 "  depend on any of those.
 if executable('ag')
 	set grepprg=ag
-	let g:grep_cmd_opts = '--hidden --follow --numbers --nogroup --nocolor'
+	let g:grep_cmd_opts = '--follow --vimgrep'
+	" add the grepformat recommended in `man ag` for use with `--vimgrep`
+	let &grepformat = '%f:%l:%c:%m' . ',' . &grepformat
 endif
+" flags for searching with the ag.vim plugin
+let g:ag_prg="ag --follow --vimgrep"
 
 " settings for vim-session
 let g:session_autosave = 'no'
@@ -225,7 +229,7 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 if executable('ag')
 	" use Ag for listing files in CtrlP –
 	" Ag has better fuzzy matching and it understands ignore files
-	let g:ctrlp_user_command = 'ag --files-with-matches --hidden --follow --nogroup --nocolor -g "" %s'
+	let g:ctrlp_user_command = 'ag --files-with-matches -g "" --follow --nogroup --nocolor %s'
 	" Ag is fast enough that CtrlP doesn’t need to cache
 	let g:ctrlp_use_caching = 0
 endif
@@ -675,12 +679,12 @@ cnoremap <M-BS> <C-W>
 cnoremap <C-BS> <C-W>
 
 " search the whole project easily
-nnoremap <Leader>/ :Ag ''<Left>
+nnoremap <Leader>/ :Ag! ''<Left>
 
 " search for the current word or selection in the whole project
 " (° is <A-*> on Mac; neither <A-*> nor <S-A-8> work for some reason)
-nnoremap °    :Ag '\b<C-R>=expand("<cword>")<CR>\b'<CR>
-xnoremap ° "sy:Ag '<C-R>s'<CR>
+nnoremap °    :Ag! '\b<C-R>=expand("<cword>")<CR>\b'<CR>
+xnoremap ° "sy:Ag! '<C-R>s'<CR>
 
 " start interactive EasyAlign from visual mode (e.g. after `vip`)
 xmap + <Plug>(EasyAlign)
@@ -696,7 +700,7 @@ nnoremap <Leader>y  :Unite -buffer-name=yank history/yank<CR>
 "nnoremap <Leader>pf :Unite -buffer-name=project_files -no-split -start-insert file_rec<CR>
 " file_rec/async version:
 "nnoremap <Leader>pf :Unite -buffer-name=project_files -no-split -start-insert file_rec/async<CR>
-"let g:unite_source_rec_async_command = ['ag', '--files-with-matches', '--hidden', '--follow', '--nogroup', '--nocolor', '-g', '']
+"let g:unite_source_rec_async_command = ['ag', '--files-with-matches', '-g', '', '--follow', '--nogroup', '--nocolor']
 "Plugin 'Shougo/vimproc.vim' " would need manual building
 
 " browse Most-Recently Updated files with the CtrlP plugin
