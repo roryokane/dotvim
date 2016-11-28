@@ -181,7 +181,7 @@ let g:session_command_aliases = 1
 
 " settings for vim-surround
 " add custom surroundings: ‘’ “”
-" FIXME this doesn’t let me create or delete these surroundings;
+" FIXME this doesn’t let me change or delete these surroundings;
 "  only add them
 " look at vim-surround’s GitHub issues to see if this has been
 "  reported already
