@@ -668,6 +668,10 @@ nnoremap <Leader>eg :edit $MYGVIMRC<CR>
 " make <Ctrl-W> window mappings easier to type
 nnoremap <Leader>w <C-W>
 xnoremap <Leader>w <C-W>
+" Window Delete mapping for consistency with Spacemacs
+" if you want the old CTRL-W D behavior, CTRL-W CTRL-D still works
+nnoremap <Leader>wd <C-W>c
+xnoremap <Leader>wd <C-W>c
 
 " command-line mappings
 " to go with <C-E> as an easy-to-remember Emacs-like mapping, and because
