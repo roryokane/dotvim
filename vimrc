@@ -441,6 +441,8 @@ try
 	set formatoptions+=j
 catch /^Vim\%((\a\+)\)\=:E539/ " the j option was added in Vim 7.4
 endtry
+" join sentences with one space, not two
+set nojoinspaces
 
 " don’t display the intro message on starting Vim
 set shortmess+=I
