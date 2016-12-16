@@ -87,7 +87,6 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'mbbill/undotree'
-" TODO add :Gqfopen (global quickfix replace) to my Vim flash cards
 Plugin 'greplace.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'tpope/vim-abolish'
