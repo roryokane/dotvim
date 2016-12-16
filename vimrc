@@ -7,6 +7,15 @@
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 
+
+" opt into Vim 8’s new defaults
+" see `:help defaults.vim`
+unlet! skip_defaults_vim
+if filereadable($VIMRUNTIME . '/defaults.vim')
+	source $VIMRUNTIME/defaults.vim
+endif
+
+
 "------------------------------------------------------------
 " Features
 "
@@ -603,7 +612,7 @@ nnoremap Q @q
 
 " Disable regexes in search by default. When editing a search pattern,
 " change V to v to enable standard (mostly not-Vim-flavored) regexes.
-" see :help \V
+" see `:help \V`
 nnoremap / /\V
 xnoremap / /\V
 nnoremap ? ?\V
