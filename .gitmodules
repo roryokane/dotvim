@@ -22,9 +22,6 @@
 [submodule "/Users/roryokane/.vim/bundle/bufexplorer.zip"]
 	path = bundle/bufexplorer.zip
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
-[submodule "/Users/roryokane/.vim/bundle/bufkill.vim"]
-	path = bundle/bufkill.vim
-	url = https://github.com/vim-scripts/bufkill.vim.git
 [submodule "/Users/roryokane/.vim/bundle/greplace.vim"]
 	path = bundle/greplace.vim
 	url = https://github.com/vim-scripts/greplace.vim.git
