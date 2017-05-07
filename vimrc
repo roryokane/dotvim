@@ -951,6 +951,7 @@ augroup END
 augroup word_characters_for_filetypes
 	autocmd!
 	autocmd FileType scss  setlocal iskeyword+=-,@-@,$,%
+	autocmd FileType sass  setlocal iskeyword+=-,@-@,$,%
 	autocmd FileType css  setlocal iskeyword+=-
 	autocmd FileType coffee  setlocal iskeyword+=$
 	autocmd FileType lisp  setlocal iskeyword-={,},[,]
