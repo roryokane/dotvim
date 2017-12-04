@@ -70,7 +70,7 @@ endif
 " ---
 " GUI controls
 
-if s:on_windows
+if !s:on_mac
 	" hide toolbar
 	set guioptions-=T
 else
