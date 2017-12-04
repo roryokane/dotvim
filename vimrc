@@ -817,6 +817,12 @@ nnoremap <Leader>pp  ggVG"+pgg0:doautocmd BufReadPost<CR>:echo<CR>
 " pasteboard (is destination of) yank
 nnoremap <Leader>py  VggoG"+y<C-O>
 
+" copy additional Spacemacs bindings to ease switching back and forth
+nnoremap <Leader>fs :update<CR>
+nnoremap <Leader><Tab> <C-^>
+nnoremap <Leader>qq :qall<CR>
+nnoremap <Leader>qs :xit<CR>
+
 
 "------------------------------------------------------------
 " Mappings that rely on other mappings
