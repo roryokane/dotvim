@@ -413,6 +413,8 @@ if exists("+breakindent")
 	"set showbreak=
 	"set breakindentopt=shift:1
 endif
+" show as much as possible of a wrapped last line, not just ‘@@@’
+set display=lastline
 
 " enable matchit to have % jump between keywords such as Ruby’s `do` and `end`
 runtime macros/matchit.vim
