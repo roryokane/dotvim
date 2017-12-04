@@ -1,21 +1,19 @@
 let s:on_windows = has('win32') || has('win64')
 let s:on_unix = has('unix')
 
-" disabled because none of my settings so far care
-"  what flavor of Unix they use
-"let s:on_mac = 0
-"let s:on_linux = 0
-"if s:on_unix
-"	let s:uname = system("printf \"$(uname)\"")
-"	if !v:shell_error
-"		if s:uname == "Darwin"
-"			let s:on_mac = 1
-"		endif
-"		if s:uname == "Linux"
-"			let s:on_linux = 1
-"		endif
-"	endif
-"endif
+let s:on_mac = 0
+let s:on_linux = 0
+if s:on_unix
+	let s:uname = system("printf \"$(uname)\"")
+	if !v:shell_error
+		if s:uname == "Darwin"
+			let s:on_mac = 1
+		endif
+		if s:uname == "Linux"
+			let s:on_linux = 1
+		endif
+	endif
+endif
 
 
 " ---
@@ -57,10 +55,16 @@ if s:on_windows
 	" why do I have cANSI instead of cDEFAULT again?
 	" below font has more Unicode characters on Windows, but uglier otherwise
 	"set guifont=DejaVu_Sans_Mono:h10
+elseif s:on_linux
+	" looks good in GVim on Ubuntu 17.10:
+	set guifont=Consolas\ 12
+	" looks good in GVim on Ubuntu 17.04:
+	"set guifont=Consolas\ 13
 else
 	set guifont=Consolas:h16
 	" looks good in MacVim on Mac OS X
 endif
+" TODO using commas, add fallback fonts, such as Ubuntu Mono and Monaco
 
 
 " ---
