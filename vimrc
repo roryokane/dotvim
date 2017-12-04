@@ -808,14 +808,14 @@ command! -range=% TrailingWhitespaceDelete  call <SID>TrailingWhitespaceDelete(<
 " better than MacVim’s “Cmd-A, Cmd-C, Cmd-V” in that they preserve cursor position
 " commands:
 " Load From Clipboard into buffer
-command! Lfc  normal! ggVG"*pgg0
+command! Lfc  normal! ggVG"+pgg0
 " Save buffer To Clipboard – copy buffer into clipboard, preserving cursor position
-command! Stc  normal! VggoG"*y<C-O>
+command! Stc  normal! VggoG"+y<C-O>
 " mappings:
 " pasteboard (is source of) paste
-nnoremap <Leader>pp ggVG"*pgg0
+nnoremap <Leader>pp  ggVG"+pgg0
 " pasteboard (is destination of) yank
-nnoremap <Leader>py VggoG"*y<C-O>
+nnoremap <Leader>py  VggoG"+y<C-O>
 
 
 "------------------------------------------------------------
