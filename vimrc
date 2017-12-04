@@ -524,7 +524,7 @@ let g:html_indent_style1 = 1
 
 
 "------------------------------------------------------------
-" Mappings
+" Mappings and commands
 
 let mapleader=" "
 let g:mapleader=" "
