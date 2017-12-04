@@ -75,6 +75,10 @@ else
 	" see `:help Session`
 endif
 
+" on Linux, don’t show a tilted arrow mouse cursor in Visual mode
+set mouseshape-=v:rightup-arrow
+set mouseshape+=v:arrow
+
 
 " ---
 " keyboard shortcuts (mappings)
