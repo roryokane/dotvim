@@ -823,6 +823,9 @@ nnoremap <Leader><Tab> <C-^>
 nnoremap <Leader>qq :qall<CR>
 nnoremap <Leader>qs :xit<CR>
 
+" an easier-to-type alternative to <Leader>qs ; named after :wq
+nnoremap <Leader>qw :xit<CR>
+
 
 "------------------------------------------------------------
 " Mappings that rely on other mappings
