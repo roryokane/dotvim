@@ -996,7 +996,7 @@ augroup END
 " TODO stop ' in plain text mode from writing ''; I use it for apostrophe
 " sometimes
 
-" TODO find a good mapping for n_<tab>
+" TODO find a good mapping for n_<Tab> (Tab in Normal mode)
 " Tab is currently used only by Snipmate, I think in insert mode
 
 " TODO finish adding useful tips from the following articles:
