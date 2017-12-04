@@ -1104,3 +1104,10 @@ augroup END
 "  which has light/dark modes with the same colors like solarized, and which
 "  uses many hues, but which uses a dark grey background for dark mode
 "  instead of solarized's dark blue one that clashes with green text
+
+" TODO Make the 'softtabstop' setting apply only to leading indentation, not
+" to all whitespace in a line. I don't think a solution is built into Vim; I
+" would have to find or write a plugin. The current behavior is annoying in,
+" for example, files with sts=2 where I am writing text. If I accidentally
+" type two spaces instead of one and then try to delete one, both are deleted,
+" and I have to type the space again.
