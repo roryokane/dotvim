@@ -1111,3 +1111,7 @@ augroup END
 " for example, files with sts=2 where I am writing text. If I accidentally
 " type two spaces instead of one and then try to delete one, both are deleted,
 " and I have to type the space again.
+
+" TODO in the syntax highlighting, color the 'list' characters very close to
+" the background. The theme “mac_classic” gets this right, but my main theme
+" “solarized” doesn’t.
