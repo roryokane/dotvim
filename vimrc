@@ -1124,3 +1124,13 @@ augroup END
 " TODO in the syntax highlighting, color the 'list' characters very close to
 " the background. The theme “mac_classic” gets this right, but my main theme
 " “solarized” doesn’t.
+
+" TODO Make a function and a mapping to toggle dots ‘.’ and hyphens ‘-’ being
+" included in 'iskeyword', for easier selection of the last element in a
+" function call `foo.bar` in `…, foo.bar)`. (Toggling of a camel-case move
+" mode would have to be from a separate feature/plugin, because though
+" 'iskeyword' could toggle underscores, it can't represent word breaks just
+" before capital letters.)
+" Maybe a better solution would be a mapping that toggles the character under
+" the cursor being in 'iskeyword'. It would be more flexible, but slower to
+" use.
