@@ -107,6 +107,12 @@ if s:on_windows || s:on_linux
 		endif
 	endfunction
 	nnoremap <silent> <C-s> :call <sid>SaveWithGUI()<CR>
+	
+	" Ctrl-T to open a new tab
+	" If I want to go back to the previous tag, I’ll use `:pop` or Ctrl-O.
+	nnoremap <C-t> :tabnew<CR>
+	vnoremap <C-t> <Esc>:tabnew<CR>
+	onoremap <C-t> <Esc>:tabnew<CR>
 endif
 
 " I don't write equivalent mappings for MacVim here
