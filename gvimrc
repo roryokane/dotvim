@@ -93,9 +93,20 @@ if s:on_windows || s:on_linux
 	noremap! <C-v> <C-r><C-o>+
 	snoremap <C-v> <C-g>"+p
 	
-	" save with file browsing dialog - for new files
-	" TODO don't use dialog if the file already exists
-	nmap <C-s> :browse confirm save<CR>
+	" Ctrl-S to save, using the file browsing dialog for unsaved files
+	function! s:SaveWithGUI()
+		let l:current_buffer_path = expand('%:p')
+		if len(l:current_buffer_path) == 0
+			browse confirm saveas
+		else
+			" I chose `write` over `update`.
+			" `write` behavior is used by Sublime Text, VS Code, gedit,
+			" and nano.
+			" `update` behavior is used by Emacs.
+			write
+		endif
+	endfunction
+	nnoremap <silent> <C-s> :call <sid>SaveWithGUI()<CR>
 endif
 
 " I don't write equivalent mappings for MacVim here
