@@ -87,9 +87,11 @@ set mouseshape+=v:arrow
 " ---
 " keyboard shortcuts (mappings)
 
-if s:on_windows
-	" paste in Insert mode
-	imap <C-v> <C-r><C-o>+
+if s:on_windows || s:on_linux
+	" Ctrl-V to paste in Insert, Command-line, Select modes
+	" TODO move this one shortcut into .vimrc – they are still useful in the console
+	noremap! <C-v> <C-r><C-o>+
+	snoremap <C-v> <C-g>"+p
 	
 	" save with file browsing dialog - for new files
 	" TODO don't use dialog if the file already exists
