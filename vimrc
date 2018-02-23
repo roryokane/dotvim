@@ -169,6 +169,12 @@ let g:airline_right_sep=''
 " don’t warn about trailing whitespace, because I like to indent even
 "  blank lines, but Vim sees that indentation as trailing whitespace
 let g:airline#extensions#whitespace#checks = [ 'indent' ]
+" hide the ‘㏑’ symbol that Airline shows by default, as
+" it is redundant with the nearby ‘☰ ’
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.maxlinenr = ''
 
 " Set 'grepprg' for the Greplace plugin. Changing this also affects the
 "  built-in :grep command and plugins that use it, but I don’t think I
