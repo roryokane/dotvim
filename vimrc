@@ -99,8 +99,7 @@ Plugin 'mbbill/undotree'
 Plugin 'greplace.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'tpope/vim-abolish'
-" delimitMate is an untried alternative to the below AutoClose--Alves
-Plugin 'AutoClose--Alves'
+Plugin 'Raimondi/delimitMate'
 " I can't get swapit to work; try some more
 Plugin 'mjbrownie/swapit'
 Plugin 'tpope/vim-speeddating'
@@ -735,6 +734,8 @@ nnoremap <Leader>mr :CtrlPMRUFiles<CR>
 xmap s <Plug>VSurround
 
 " text objects to select “…” and ‘…’ – text in smart quotes
+" TODO replace with https://github.com/reedes/vim-textobj-quote
+"   (recommended https://lobste.rs/s/ucq9zt/has_internet_killed_curly_quotes/comments/kqtjot#c_kqtjot)
 " I use [^”]* instead of .* or .\{-} to match the minimum possible
 " for select i, I use lookbehind and lookahead to match within quotes
 " for select a, I treat trailing and leading whitespace the same as |v_aquote|,
