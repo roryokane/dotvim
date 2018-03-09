@@ -117,3 +117,9 @@ endif
 
 " I don't write equivalent mappings for MacVim here
 "  because it already provides them by default
+
+" move back and forward in the jump list using the
+" Back and Forward mouse buttons
+" TODO Check if this is already mapped in MacVim. If so, move it.
+nnoremap <X1Mouse> <C-O>
+nnoremap <X2Mouse> <C-I>
