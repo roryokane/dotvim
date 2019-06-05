@@ -297,7 +297,7 @@ set nohlsearch
 " Modelines have historically been a source of security vulnerabilities.  As
 " such, it may be a good idea to disable them and use the securemodelines
 " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-" set nomodeline
+set nomodeline
 
 
 "------------------------------------------------------------
