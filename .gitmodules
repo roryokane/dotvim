@@ -1,9 +1,6 @@
 [submodule "bundle/vundle"]
 	path = bundle/vundle
 	url = http://github.com/gmarik/vundle.git
-[submodule "/Users/roryokane/.vim/bundle/AutoClose--Alves"]
-	path = bundle/AutoClose--Alves
-	url = https://github.com/vim-scripts/AutoClose--Alves.git
 [submodule "/Users/roryokane/.vim/bundle/Command-T"]
 	path = bundle/Command-T
 	url = https://github.com/wincent/Command-T
