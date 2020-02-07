@@ -99,11 +99,11 @@ if s:on_windows || s:on_linux
 		if len(l:current_buffer_path) == 0
 			browse confirm saveas
 		else
+			write
 			" I chose `write` over `update`.
 			" `write` behavior is used by Sublime Text, VS Code, gedit,
 			" and nano.
 			" `update` behavior is used by Emacs.
-			write
 		endif
 	endfunction
 	nnoremap <silent> <C-s> :call <sid>SaveWithGUI()<CR>
@@ -114,12 +114,12 @@ if s:on_windows || s:on_linux
 	vnoremap <C-t> <Esc>:tabnew<CR>
 	onoremap <C-t> <Esc>:tabnew<CR>
 endif
+" I don’t write equivalent mappings for MacVim here
+"  because it already provides them by default.
 
-" I don't write equivalent mappings for MacVim here
-"  because it already provides them by default
+" mappings usable on all OSs:
 
 " move back and forward in the jump list using the
 " Back and Forward mouse buttons
-" TODO Check if this is already mapped in MacVim. If so, move it.
 nnoremap <X1Mouse> <C-O>
 nnoremap <X2Mouse> <C-I>
