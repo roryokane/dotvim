@@ -462,6 +462,8 @@ set nojoinspaces
 
 " don’t display the intro message on starting Vim
 set shortmess+=I
+" display search count like “[1/5]” when searching
+set shortmess-=S
 
 " open new split panes to right and bottom
 set splitbelow
