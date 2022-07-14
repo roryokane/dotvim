@@ -694,7 +694,7 @@ xnoremap <Leader>wd <C-W>c
 
 " command-line mappings
 " to go with <C-E> as an easy-to-remember Emacs-like mapping, and because
-"  I wlll probably never need to use the default behavior of <C-A>
+"  I will probably never need to use the default behavior of <C-A>
 cnoremap <C-A> <Home>
 " delete the previous word with Option-Delete (for Mac)
 cnoremap <M-BS> <C-W>
