@@ -884,6 +884,10 @@ xnoremap <Leader>r "rymr:%s/\V<C-R>r//c<left><left><C-R>r
 "nnoremap <Leader>r "ryiwmrvii:s/\V\<<C-R>r\>//c<left><left><C-R>r
 "xnoremap <Leader>r   "rymrvii:s/\V\<<C-R>r\>//c<left><left><C-R>r
 
+" create Markdown link from selected text using URL in clipboard
+" uses vim-surround, so can’t be vnoremap
+vmap <Leader>ml s]%a()<Esc>"*Pl
+
 " Remap <f1> to <esc> in every mode to accommodate fat-fingering
 map <f1> <esc>
 map! <f1> <esc>
