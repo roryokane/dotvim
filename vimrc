@@ -777,6 +777,13 @@ command! CDC  cd %:p:h
 command! CDCP  cd %:p:h/..
 command! CDCPP  cd %:p:h/../..
 
+" Copy metadata about the current file to the system clipboard.
+" I don’t remember the subtleties of when @* should be preferred over @+ .
+" If this command ever fails, I can read `:help x11-selection` to debug.
+command! CopyFileName  let @+ = expand("%:t")
+command! CopyFilePathRelative  let @+ = expand("%")
+command! CopyFilePathAbsolute  let @+ = expand("%:p")
+
 " Help command to open help in a new tab
 " help-argument-taking syntax taken from http://stackoverflow.com/a/14601793/578288
 " remember also that :vertical help opens help in a vertical split pane
